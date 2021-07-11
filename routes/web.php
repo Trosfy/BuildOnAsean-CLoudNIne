@@ -17,4 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/riasec-assessment', 'AssessmentController@view_riasec_assessment');
+Route::get('/riasec-assessment', 'AssessmentController@view_riasec_assessment_page');
+
+Route::post('/get-riasec-data','AssessmentController@get_risec_result');
