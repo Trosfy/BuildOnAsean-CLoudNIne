@@ -50,14 +50,14 @@ class RiasecSeeder extends Seeder
 
             ['question' => 'I like acting in plays', 'code' => 'A'],
             ['question' => 'I am a practical person', 'code' => 'R'],
-            ['question' => '. I like working with numbers or charts', 'code' => 'I'],
+            ['question' => 'I like working with numbers or charts', 'code' => 'I'],
             ['question' => 'I like to get into discussions about issues', 'code' => 'S'],
             ['question' => 'I am good at keeping records of my work', 'code' => 'C'],
             ['question' => 'I like to lead
             ', 'code' => 'E'],
             ['question' => 'I like working outdoors', 'code' => 'R'],
             ['question' => 'I would like to work in an office', 'code' => 'C'],
-            ['question' => '’m good at math', 'code' => 'I'],
+            ['question' => 'I’m good at math', 'code' => 'I'],
             ['question' => 'I like helping people', 'code' => 'S'],
 
             ['question' => 'I like to draw', 'code' => 'A'],
