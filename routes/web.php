@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::get('/riasec-assessment', 'AssessmentController@view_riasec_assessment_page');
 
 Route::post('/get-riasec-data','AssessmentController@get_risec_result');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
