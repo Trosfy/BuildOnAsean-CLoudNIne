@@ -18,9 +18,9 @@
             <div class='form-check'>
                 <input class="form-check-input" type="checkbox" value="{{$question->code}}" name="checked[]" id="question-check">
                 <label class="form-check-label" for="question-check">
-                    {{$question->id}}
+                    {{-- {{$question->id}} --}}
                     {{$question->question}}
-                    {{$question->code}}
+                    {{-- {{$question->code}} --}}
                 </label> 
             </div>  
         @endforeach
