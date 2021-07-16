@@ -13,8 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'PageController@landing');
+Route::get('/about', 'PageController@about');
+
+// Major asssessment
+Route::get('/major-assessment/1', 'AssessmentController@majorAssessment1');
+Route::get('/major-assessment/2', 'AssessmentController@majorAssessment2');
+Route::get('/major-assessment/3', 'AssessmentController@majorAssessment3');
+Route::get('/major-assessment-result', 'AssessmentController@viewMajorResult');
+
+// Career asssessment
+Route::get('/career-assessment', 'AssessmentController@careerAssessment');
+Route::get('/career-assessment-result', 'AssessmentController@viewCareerResult');
+
+// Careers
+Route::get('/careers', 'CareerController@showAll');
+Route::get('/career/{id}', 'CareerController@show');
+
+//Majors
+Route::get('/majors', 'MajorController@showAll');
+Route::get('/major/{id}', 'MajorController@show');
+
+//Tes riasec
+Route::get('/test', function () {
+    return view('riasec');
 });
 
 Route::get('/riasec-assessment', 'AssessmentController@view_riasec_assessment_page');

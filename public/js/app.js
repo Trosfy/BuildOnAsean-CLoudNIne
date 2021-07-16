@@ -50006,8 +50006,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Tugas\Binus\AWS\BuildonAsean2021\project\BuildOnAsean-CloudNine\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Tugas\Binus\AWS\BuildonAsean2021\project\BuildOnAsean-CloudNine\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Jacelyn\Personal\Project\BuildOn - Cloud Nine\BuildOnAsean-CLoudNIne\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Jacelyn\Personal\Project\BuildOn - Cloud Nine\BuildOnAsean-CLoudNIne\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

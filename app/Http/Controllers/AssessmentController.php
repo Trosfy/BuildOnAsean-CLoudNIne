@@ -9,8 +9,10 @@ use lluminate\Support\Facades\Log;
 class AssessmentController extends Controller
 {
     public function view_riasec_assessment_page(){
-        $questions = RiasecQuestion::all();
-        return view('riasec-assessment', ['questions' => $questions]); 
+        $questions = RiasecQuestion::paginate(5);
+
+        return view('career-paginate', ['questions' => $questions]); 
+        
     }
 
     public function get_risec_result(Request $request){
@@ -125,5 +127,35 @@ class AssessmentController extends Controller
         $tops = array();
         array_push($tops, $top1, $top2, $top3); 
         return view('riasec-result', ['tops' => $tops]);
+    }
+
+    public function majorAssessment1(){
+
+        return view('uni-assessment.uni-assessment-1');
+    }
+
+    public function majorAssessment2(){
+
+        return view('uni-assessment.uni-assessment-2-ipa');
+    }
+
+    public function majorAssessment3(){
+
+        return view('uni-assessment.uni-assessment-3');
+    }
+
+    public function viewMajorResult(){
+
+        return view('uni-assessment.uni-assessment-result');
+    }
+
+    public function careerAssessment(){
+        return view('career-assessment.career-assessment');
+
+    }
+
+    public function viewCareerResult(){
+
+        return view('career-assessment.career-assessment-result');
     }
 }
