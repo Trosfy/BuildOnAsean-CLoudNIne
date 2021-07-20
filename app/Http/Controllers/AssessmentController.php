@@ -129,6 +129,11 @@ class AssessmentController extends Controller
         return view('riasec-result', ['tops' => $tops]);
     }
 
+    public function majorAssessment(){
+
+        return view('uni-assessment.uni-assessment');
+    }
+
     public function majorAssessment1(){
 
         return view('uni-assessment.uni-assessment-1');
@@ -151,6 +156,11 @@ class AssessmentController extends Controller
 
     public function careerAssessment(){
         return view('career-assessment.career-assessment');
+
+    }
+
+    public function careerAssessmentQ(){
+        return view('career-assessment.career-assessment-q');
 
     }
 

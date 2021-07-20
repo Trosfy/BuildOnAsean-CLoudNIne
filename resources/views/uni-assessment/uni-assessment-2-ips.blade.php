@@ -2,20 +2,20 @@
 <title>University/Major Assessment? ips</title>
 
 @section('uniLeft')
-<div class="d-flex stepsContainer justify-content-around">
+<div class="d-flex stepsContainer justify-content-around mt-4">
     <img src="{{asset('storage/assets/step-1.svg')}}" alt="">
     <img src="{{asset('storage/assets/step-2-active.svg')}}" alt="">
     <img src="{{asset('storage/assets/step-3.svg')}}" alt="">
 </div>
 <br>
-<img src="{{asset('storage/assets/icons/search.svg')}}" alt="image" class="imgSquare">
+<img src="{{asset('storage/assets/illustrations/major-test-2-ips.svg')}}" alt="image" class="imgSquare mt-3">
 <span class="uniText">
     <br>
     <span class="text-h4 text-blue-dark">
         Input your school grades
     </span>
     <br>
-    <span class="text-14-r text-darkgrey">
+    <span class="text-14-r text-white">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae architecto quis eligendi, alias non corrupti repellendus. 
     </span>
 </span>
@@ -26,7 +26,7 @@
     <form action="/major-assessment/3" method="" class="formUni">
         @csrf
 
-        <table class="table grades-table">
+        <table class="table grades-table" data-aos="fade-up">
 
             <thead >
                 <tr>

@@ -15,8 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PageController@landing');
 Route::get('/about', 'PageController@about');
+Route::get('/search', 'PageController@search');
+Route::get('/dashboard', 'PageController@dashboard');
 
 // Major asssessment
+Route::get('/major-assessment', 'AssessmentController@majorAssessment');
 Route::get('/major-assessment/1', 'AssessmentController@majorAssessment1');
 Route::get('/major-assessment/2', 'AssessmentController@majorAssessment2');
 Route::get('/major-assessment/3', 'AssessmentController@majorAssessment3');
@@ -24,6 +27,7 @@ Route::get('/major-assessment-result', 'AssessmentController@viewMajorResult');
 
 // Career asssessment
 Route::get('/career-assessment', 'AssessmentController@careerAssessment');
+Route::get('/career-assessment-q', 'AssessmentController@careerAssessmentQ');
 Route::get('/career-assessment-result', 'AssessmentController@viewCareerResult');
 
 // Careers
@@ -45,3 +49,10 @@ Route::post('/get-riasec-data','AssessmentController@get_risec_result');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/confirm', function(){
+    return view('auth.passwords.confirm');
+});
+Route::get('/reset', function(){
+    return view('auth.passwords.reset');
+});

@@ -4,32 +4,32 @@
 
 </style>
 @section('uniLeft')
-<div class="d-flex stepsContainer justify-content-around">
+<div class="d-flex stepsContainer justify-content-around mt-4">
     <img src="{{asset('storage/assets/step-1-active.svg')}}" alt="">
     <img src="{{asset('storage/assets/step-2.svg')}}" alt="">
     <img src="{{asset('storage/assets/step-3.svg')}}" alt="">
 </div>
 <br>
-<img src="{{asset('storage/assets/icons/search.svg')}}" alt="image" class="imgSquare">
-<span class="uniText">
+<img src="{{asset('storage/assets/illustrations/major-test-1.svg')}}" alt="image" class="imgSquare mt-3">
+<span class="uniText" >
     <br>
     <span class="text-h4 text-blue-dark">
         Choose your penjurusan 
     </span>
     <br>
-    <span class="text-14-r text-darkgrey">
+    <span class="text-14-r text-white">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae architecto quis eligendi, alias non corrupti repellendus. 
     </span>
 </span>
 @endsection
 
 @section('uniRight')
-<div class="uniAssessmentContainer ">
-    <form action="/major-assessment/2" method="" class="formUni">
+<div class="uniAssessmentContainer">
+    <form action="/major-assessment/2" method="" class="formUni" >
         @csrf
 
         <div class="row">
-            <div class="form-group a d-flex justify-content-center flex-column">
+            <div class="form-group a d-flex justify-content-center flex-column"data-aos="fade-up">
                 <span class="text-h4 text-blue-dark">
                     Choose your penjurusan 
                 </span>

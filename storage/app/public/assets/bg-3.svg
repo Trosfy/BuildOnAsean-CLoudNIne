@@ -1,1 +1,14 @@
-<svg id="visual" viewBox="0 0 1280 600" width="1280" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="1280" height="600" fill="#A4B996"></rect><defs><linearGradient id="grad1_0" x1="53.1%" y1="0%" x2="100%" y2="100%"><stop offset="7.333333333333333%" stop-color="#a4b996" stop-opacity="1"></stop><stop offset="92.66666666666667%" stop-color="#a4b996" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_0" x1="0%" y1="0%" x2="46.9%" y2="100%"><stop offset="7.333333333333333%" stop-color="#a4b996" stop-opacity="1"></stop><stop offset="92.66666666666667%" stop-color="#a4b996" stop-opacity="1"></stop></linearGradient></defs><g transform="translate(1280, 0)"><path d="M0 540C-72.8 535 -145.6 530.1 -206.6 498.9C-267.7 467.7 -316.9 410.3 -354.3 354.3C-391.7 298.2 -417.2 243.6 -446.2 184.8C-475.2 126 -507.6 63 -540 0L0 0Z" fill="#E1C5C1"></path></g><g transform="translate(0, 600)"><path d="M0 -540C75.9 -537.8 151.9 -535.5 206.6 -498.9C261.4 -462.3 295 -391.3 337.3 -337.3C379.5 -283.3 430.4 -246.3 465.6 -192.9C500.9 -139.5 520.4 -69.7 540 0L0 0Z" fill="#E1C5C1"></path></g></svg>
+<svg width="1280" height="600" viewBox="0 0 1280 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<path d="M1280 0H0V600H1280V0Z" fill="#A4B996"/>
+<path d="M1337 540C1264.2 535 1191.4 530.1 1130.4 498.9C1069.3 467.7 1020.1 410.3 982.7 354.3C945.3 298.2 919.8 243.6 890.8 184.8C861.8 126 829.4 63 797 0H1337V540Z" fill="#99B6C5"/>
+<path d="M1402 300C1350.5 296.463 1299 292.997 1255.85 270.926C1212.63 248.854 1177.82 208.249 1151.37 168.634C1124.91 128.949 1106.87 90.3244 1086.35 48.7289C1065.84 7.13334 1042.92 -37.4333 1020 -82H1402V300Z" fill="#E1C5C1"/>
+<path d="M0 112C75.9 114.2 151.9 116.5 206.6 153.1C261.4 189.7 295 260.7 337.3 314.7C379.5 368.7 430.4 405.7 465.6 459.1C500.9 512.5 520.4 582.3 540 652H0V112Z" fill="#99B6C5"/>
+<path d="M-63 322C-7.05889 323.621 48.9559 325.317 89.2719 352.292C129.661 379.268 154.426 431.597 185.603 471.397C216.706 511.197 254.221 538.468 280.164 577.826C306.182 617.183 320.554 668.629 335 720H-63V322Z" fill="#E1C5C1"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="1280" height="600" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -2,20 +2,20 @@
 <title>University/Major Assessment? 3</title>
 
 @section('uniLeft')
-<div class="d-flex stepsContainer justify-content-around">
+<div class="d-flex stepsContainer justify-content-around mt-4">
     <img src="{{asset('storage/assets/step-1.svg')}}" alt="">
     <img src="{{asset('storage/assets/step-2.svg')}}" alt="">
     <img src="{{asset('storage/assets/step-3-active.svg')}}" alt="">
 </div>
 <br>
-<img src="{{asset('storage/assets/icons/search.svg')}}" alt="image" class="imgSquare">
+<img src="{{asset('storage/assets/illustrations/major-test-3.svg')}}" alt="image" class="imgSquare mt-3">
 <span class="uniText">
     <br>
     <span class="text-h4 text-blue-dark">
         Input your budget
     </span>
     <br>
-    <span class="text-14-r text-darkgrey">
+    <span class="text-14-r text-white">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae architecto quis eligendi, alias non corrupti repellendus. 
     </span>
 </span>
@@ -26,14 +26,14 @@
     <form action="/major-assessment-result" method="" class="formUni">
         @csrf
 
-        <div class="row">
-            <div class="form-group a d-flex justify-content-center flex-column text-left">
+        <div class="row" >
+            <div class="form-group a d-flex justify-content-center flex-column text-left"data-aos="fade-up">
                 
-                <label for="budget" class="col-form-label text-h4">Input your budget</label>
+                <label for="budget" class="col-form-label text-h4 text-blue-dark">Input your budget</label>
 
                             <div class="d-flex align-items-center">
                                 Rp. 
-                                <input id="budget" type="number" class="ml-2 w-50 form-control @error('budget') is-invalid @enderror" name="budget" placeholder="0">
+                                <input id="budget" type="number" class="ml-2 form-control @error('budget') is-invalid @enderror" name="budget" placeholder="0">
 
                                 @error('budget')
                                     <span class="invalid-feedback" role="alert">

@@ -1,33 +1,33 @@
 @extends('layouts.uni-assessment-layout')
 <title>University/Major Assessment? 2 ipa</title>
 
+
 @section('uniLeft')
-<div class="d-flex stepsContainer justify-content-around">
+<div class="d-flex stepsContainer justify-content-around  mt-4">
     <img src="{{asset('storage/assets/step-1.svg')}}" alt="">
     <img src="{{asset('storage/assets/step-2-active.svg')}}" alt="">
     <img src="{{asset('storage/assets/step-3.svg')}}" alt="">
 </div>
 <br>
-<img src="{{asset('storage/assets/icons/search.svg')}}" alt="image" class="imgSquare">
+<img src="{{asset('storage/assets/illustrations/major-test-2-ipa.svg')}}" alt="image" class="imgSquare mt-3">
 <span class="uniText">
     <br>
     <span class="text-h4 text-blue-dark">
         Input your school grades
     </span>
     <br>
-    <span class="text-14-r text-darkgrey">
+    <span class="text-14-r text-white">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae architecto quis eligendi, alias non corrupti repellendus. 
     </span>
 </span>
 @endsection
 
 @section('uniRight')
-<div class="uniAssessmentContainer ">
+<div class="uniAssessmentContainer">
     <form action="/major-assessment/3" method="" class="formUni">
         @csrf
 
-        <table class="table grades-table">
-
+        <table class="table grades-table mt-4" data-aos="fade-up">
             <thead >
                 <tr>
                     <td colspan="6" class="text-18-sb text-blue-dark">Semester</td>

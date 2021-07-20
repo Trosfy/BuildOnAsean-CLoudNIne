@@ -1,12 +1,6 @@
 @extends('layouts.app')
+<title>Register</title>
 <style>
-    .col-md-8{
-        /* border: 2px solid black !important; */
-    }
-
-    .imgContainerr, .textContainerr{
-        /* border: 2px solid plum !important; */
-    }
     .imgContainerr{
         height: 90vh;
         width: 30vw;
@@ -22,38 +16,33 @@
         /* border: 2px solid blue !important; */
         height: auto !important;
     }
-    .row{
-        /* min-height: 100px !important; */
-    }
+
     .form-control{
         border-radius: 15px !important;
     }
     .form-check{
         margin-bottom: 1rem !important;
     }
-    .navbar{
-        /* position: fixed !important;
-        overflow: hidden !important; */
-    }
+
 </style>
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid container-100vh">
     <div class="row justify-content-center">
-            <div class="d-flex" style="padding: 0 !important;">
-                <div class="imgContainerr">
-                    <img src="{{asset('storage/assets/icons/search.svg')}}" alt="image">
+        <div class="d-flex" style="padding: 0 !important;">
+            <div class="imgContainerr container-100vh-only sticky">
+                <img src="{{asset('storage/assets/images/registration.jpg')}}" alt="image">
+            </div>
+            <div class="textContainerr container-100vh-only d-flex justify-content-center align-items-center flex-column text-white bg-blue-dark">
+                <div class="row text-h2 mt-5" style="margin-left: 0 !important;">
+                    <span class="text-center text-darkblue mb-3">Create account</span>
                 </div>
-                <div class="textContainerr">
-                    <div class="row text-h2" style="margin-left: 0 !important;">
-                        <span class="text-center text-darkblue">Create account</span>
-                    </div>
-                    <div class="row text-center" style="margin-left: 0 !important;">
-                        <span class="text-center">sign in with google</span>
-                    </div>
-                    <div class="row text-14-r text-center" style="margin-left: 0 !important;">
-                        <span class="text-center mb-4">or use your email for registration</span>
-                    </div>
-                    <div class="row" style="margin-left: 0 !important;">
+                {{-- <div class="row text-center" style="margin-left: 0 !important;">
+                    <span class="text-center">sign in with google</span>
+                </div>
+                <div class="row text-14-r text-center" style="margin-left: 0 !important;">
+                    <span class="text-center mb-4">or use your email for registration</span>
+                </div> --}}
+                <div class="row" style="margin-left: 0 !important;">
                         {{-- <form method="POST" action="{{ route('register') }}">
                             @csrf
     
@@ -115,10 +104,10 @@
                                 </div>
                             </div>
                         </form> --}}
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ route('register') }}" class="text-14-sb">
                             @csrf
                           
-                                <div class="row text-16-r">
+                                <div class="row">
                                     <div class="form-group col-md-6">
                                         <label for="name" class="col-form-label text-md-right">First {{ __('Name') }}</label>
                                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -205,13 +194,13 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="form-check">
+                                    <div class="form-check text-center">
                                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                         <label class="form-check-label" for="exampleCheck1">I agree to the Terms Privacy Policy</label>
                                       </div>
                                 </div>
                                 <div class="row">
-                                    <div class="form-group text-center">
+                                    <div class="form-group text-center mt-3">
                                         {{-- <a class="btn btn-primary">Sign up</a> --}}
                                         <button type="submit" class="btn btn-primary">
                                             {{ __('Register') }}
@@ -222,8 +211,8 @@
                         </form>
 
                     </div>
-                    <div class="row" style="margin-left: 0 !important;">
-                        <span class="text-center">Already have an account? Log In</span>
+                    <div class="row ml-0 text-16-r text-white" >
+                        <span class="text-center ">Already have an account? <a class="text-16-sb text-decoration-none text-white" href="{{ route('login') }}">{{ __('Login') }}</a></span>
                     </div>
                 </div>
             {{-- <div class="card">

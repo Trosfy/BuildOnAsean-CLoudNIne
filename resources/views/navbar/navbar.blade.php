@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-md navbar-light">
+<nav class="navbar navbar-expand-md navbar-light  navbar-fixed-top transparent">
     <div class="container">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none logoContainer navbar-brand">
-            <img src="{{asset('storage/assets/icons/fi-rr-asterisk.svg')}}" alt="logo" class="logo filter-white">
+            <img src="{{asset('storage/assets/icons/logo.svg')}}" alt="logo" class="logo filter-white">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -11,11 +11,12 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li><a href="/" class="nav-link px-2 text-green-dark-hover">Home</a></li>
-                <li><a href="/major-assessment/1" class="nav-link px-2 text-green-dark-hover">Major Test</a></li>
+                <li><a href="/major-assessment" class="nav-link px-2 text-green-dark-hover">Major Test</a></li>
+                <li><a href="/career-assessment" class="nav-link px-2 text-green-dark-hover">Career Test</a></li>
                 <li><a href="/majors" class="nav-link px-2 text-green-dark-hover">Majors</a></li>
                 <li><a href="/careers" class="nav-link px-2 text-green-dark-hover">Careers</a></li>
-                <li><a href="/about" class="nav-link px-2 text-green-dark-hover">About</a></li>
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 searchBar">
+                {{-- <li><a href="/about" class="nav-link px-2 text-green-dark-hover">About</a></li> --}}
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 searchBar" action="/search" method="">
                   <input class="form-control searchInput text-12-sb" type="text" placeholder="Search" >
                   <button class="my-2 my-sm-0 searchLogoContainer" type="submit">
                       <img src="{{asset('storage/assets/icons/search.svg')}}" alt="logo" class="logo filter-white">
@@ -58,3 +59,4 @@
         </div>
     </div>
 </nav>
+

@@ -21,17 +21,20 @@
         padding: 5rem 5rem !important;
         text-align: center !important;
     }
+    div{
+        /* border: 2px solid plum !important; */
+    }
 
 </style>
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row justify-content-center">
+    <div class="container-fluid bgImg" style="background-image: url({{asset('storage/assets/bg/bg-22.svg')}})">
+        <div class="row justify-content-center container-100vh">
             <div class="d-flex" style="padding: 0 !important;">
-                <div class="imgContainerr d-flex flex-column justify-content-center p2 align-items-center">
+                <div class="container-100vh imgContainerr d-flex flex-column justify-content-center p3 align-items-center sticky" style="width: 30vw !important;">
                     @yield('uniLeft')
                 </div>
-                <div class="textContainerr d-flex flex-column align-items-center justify-content-center">
+                <div class="container-100vh textContainerr d-flex flex-column align-items-center justify-content-center ">
                     @yield('uniRight')
                 </div>
                     
