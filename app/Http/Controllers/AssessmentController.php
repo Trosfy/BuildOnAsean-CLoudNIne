@@ -139,6 +139,10 @@ class AssessmentController extends Controller
         return view('uni-assessment.uni-assessment-1');
     }
 
+    public function majorAssessment1save (Request $request){
+        // dd($request->jurusan);
+    }
+
     public function majorAssessment2(){
 
         return view('uni-assessment.uni-assessment-2-ipa');
