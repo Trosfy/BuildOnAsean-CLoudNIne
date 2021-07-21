@@ -25,22 +25,21 @@
 
 @section('uniRight')
 <div class="uniAssessmentContainer">
-    <form action="/major-assessment/2" method="" class="formUni" >
+    <form action="/major-assessment/1" method="POST" class="formUni" >
         @csrf
-
         <div class="row">
             <div class="form-group a d-flex justify-content-center flex-column"data-aos="fade-up">
                 <span class="text-h4 text-blue-dark">
                     Choose your penjurusan 
                 </span>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                    <input class="form-check-input" type="radio" name="jurusan" id="exampleRadios1" value="IPA" checked>
                     <label class="form-check-label" for="exampleRadios1">
                       IPA
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    <input class="form-check-input" type="radio" name="jurusan" id="exampleRadios2" value="IPS">
                     <label class="form-check-label" for="exampleRadios2">
                       IPS
                     </label>

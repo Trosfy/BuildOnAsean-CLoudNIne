@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,10 @@ Route::get('/major-assessment/1', 'AssessmentController@majorAssessment1');
 Route::get('/major-assessment/2', 'AssessmentController@majorAssessment2');
 Route::get('/major-assessment/3', 'AssessmentController@majorAssessment3');
 Route::get('/major-assessment-result', 'AssessmentController@viewMajorResult');
+
+
+// Save assessment results
+Route::post('/major-assessment/1', 'AssessmentController@majorAssessment1save');
 
 // Career asssessment
 Route::get('/career-assessment', 'AssessmentController@careerAssessment');
