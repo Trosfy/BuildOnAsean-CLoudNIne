@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\RiasecQuestion;
 use Illuminate\Http\Request;
 use lluminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Http;
 
 class AssessmentController extends Controller
 {
@@ -140,7 +141,17 @@ class AssessmentController extends Controller
     }
 
     public function majorAssessment1save (Request $request){
-        // dd($request->jurusan);
+        //test data
+        $test_data = array(
+            'data' => "78,78,93,93,93,83,83,83,83,93,78,78,78,78,78,83,83,88,88,78,78,78,78,78,78,78,78,83,83,83,78,78,88,88,93,79.24305051,79.87593939,79.7976569,80.3623431,82.44420502,0,0,0,0,0,83,83,83,83,88,98,98,93,93,93,1,0",
+         );
+         $url = "https://jojbix5rak.execute-api.us-east-1.amazonaws.com/test/predict-major";
+         $client = new \GuzzleHttp\Client();
+         $response = $client->post($url, [
+             'headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json'],
+             'body'    => json_encode($test_data)
+         ]); 
+         print_r(json_decode($response->getBody(), true));
     }
 
     public function majorAssessment2(){
