@@ -23,7 +23,7 @@
 
 @section('uniRight')
 <div class="uniAssessmentContainer ">
-    <form action="/major-assessment-result" method="" class="formUni">
+    <form action="/major-assessment/3" method="POST" class="formUni">
         @csrf
 
         <div class="row" >
