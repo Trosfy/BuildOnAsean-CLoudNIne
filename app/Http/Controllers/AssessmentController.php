@@ -4,11 +4,24 @@ namespace App\Http\Controllers;
 
 use App\RiasecQuestion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use lluminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Http;
 
 class AssessmentController extends Controller
 {
+
+    function __construct()
+    {
+        $this->jurusan = "";
+
+        $this->score_array = array(); 
+
+        $this->budget = 0;
+    }
+
+    
+
     public function view_riasec_assessment_page(){
         $questions = RiasecQuestion::paginate(5);
 
@@ -142,21 +155,43 @@ class AssessmentController extends Controller
 
     public function majorAssessment1save (Request $request){
         //test data
-        $test_data = array(
-            'data' => "78,78,93,93,93,83,83,83,83,93,78,78,78,78,78,83,83,88,88,78,78,78,78,78,78,78,78,83,83,83,78,78,88,88,93,79.24305051,79.87593939,79.7976569,80.3623431,82.44420502,0,0,0,0,0,83,83,83,83,88,98,98,93,93,93,1,0",
-         );
-         $url = "https://jojbix5rak.execute-api.us-east-1.amazonaws.com/test/predict-major";
-         $client = new \GuzzleHttp\Client();
-         $response = $client->post($url, [
-             'headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json'],
-             'body'    => json_encode($test_data)
-         ]); 
-         print_r(json_decode($response->getBody(), true));
+        // $test_data = array(
+        //     'data' => "78,78,93,93,93,83,83,83,83,93,78,78,78,78,78,83,83,88,88,78,78,78,78,78,78,78,78,83,83,83,78,78,88,88,93,79.24305051,79.87593939,79.7976569,80.3623431,82.44420502,0,0,0,0,0,83,83,83,83,88,98,98,93,93,93,1,0",
+        //  );
+        //  $url = "https://jojbix5rak.execute-api.us-east-1.amazonaws.com/test/predict-major";
+        //  $client = new \GuzzleHttp\Client();
+        //  $response = $client->post($url, [
+        //      'headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json'],
+        //      'body'    => json_encode($test_data)
+        //  ]); 
+        //  print_r(json_decode($response->getBody(), true));
+
+        session()->put('jurusan', $request->jurusan);
+        // $this->majorAssessment2($request->jurusan);
+        return redirect()->action([AssessmentController::class, 'majorAssessment2']);
+        
     }
 
     public function majorAssessment2(){
+        $jurusan = session()->get('jurusan');
+        return view('uni-assessment.uni-assessment-2-ipa', ['jurusan' => $jurusan]);
+    }
 
-        return view('uni-assessment.uni-assessment-2-ipa');
+    public function majorAssessment2save(Request $request){
+        // $score_array[] = $request->grademat1;
+        $jurusan = session()->get('jurusan');
+        if($jurusan == 'IPA'){
+            $score_array = array($request->grademat1, $request->grademat2, $request->grademat3, $request->grademat4, $request->grademat5, $request->gradebing1, $request->gradebing2, $request->gradebing3, $request->gradebing4, $request->gradebing5, $request->gradebindo1, $request->gradebindo2, $request->gradebindo3, $request->gradebindo4, $request->gradebindo5, $request->gradefis1, $request->gradefis2, $request->gradefis3, $request->gradefis4, $request->gradefis5, $request->gradekimia1, $request->gradekimia2, $request->gradekimia3, $request->gradekimia4, $request->gradekimia5, $request->gradebio1, $request->gradebio2, $request->gradebio3, $request->gradebio4, $request->gradebio5, $request->gradesejarah1, $request->gradesejarah2, $request->gradesejarah3, $request->gradesejarah4, $request->gradesejarah5, $request->gradekomp1, $request->gradekomp2, $request->gradekomp3, $request->gradekomp4, $request->gradekomp5);
+        } else {
+            $score_array = array($request->grademat1, $request->grademat2, $request->grademat3, $request->grademat4, $request->grademat5, $request->gradebing1, $request->gradebing2, $request->gradebing3, $request->gradebing4, $request->gradebing5, $request->gradebindo1, $request->gradebindo2, $request->gradebindo3, $request->gradebindo4, $request->gradebindo5, $request->gradeekon1, $request->gradeekon2, $request->gradeekon3, $request->gradeekon4, $request->gradeekon5, $request->gradegeo1, $request->gradegeo2, $request->gradegeo3, $request->gradegeo4, $request->gradegeo5, $request->gradesos1, $request->gradesos2, $request->gradesos3, $request->gradesos4, $request->gradesos5, $request->gradesejarah1, $request->gradesejarah2, $request->gradesejarah3, $request->gradesejarah4, $request->gradesejarah5, $request->gradekomp1, $request->gradekomp2, $request->gradekomp3, $request->gradekomp4, $request->gradekomp5);
+        }
+        
+
+        session()->put('score_array', $score_array);
+        // dd($score_array);
+
+        return redirect()->action([AssessmentController::class, 'majorAssessment3']);
+        
     }
 
     public function majorAssessment3(){
@@ -164,9 +199,70 @@ class AssessmentController extends Controller
         return view('uni-assessment.uni-assessment-3');
     }
 
-    public function viewMajorResult(){
+    public function majorAssessment3save(Request $request){
+        // $this->budget = $request->budget; 
+        session()->put('budget', $request->budget);
+        return redirect()->action([AssessmentController::class, 'viewMajorResult']);
+    }
 
-        return view('uni-assessment.uni-assessment-result');
+    public function viewMajorResult(){
+        $budget = session()->get('budget');
+        $jurusan = session()->get('jurusan');
+        $score_array = session()->get('score_array');
+        $ipa = 0;
+        $ips = 0;
+
+        // print($budget);
+        // print($jurusan);
+        // print(count($score_array)); 
+
+        $fin_score_array = array(); 
+
+        if($jurusan == 'IPA'){
+            $ipa = 1; 
+            for($i = 0; $i < 30 ; $i++){
+                array_push($fin_score_array, $score_array[$i]);
+            }
+            for($i = 0; $i < 15; $i++){
+                array_push($fin_score_array, 0);
+            }
+            for($i = 30; $i < count($score_array); $i++){
+                array_push($fin_score_array, $score_array[$i]);
+            }
+        } else {
+            $ips = 1; 
+            for($i = 0; $i < 15 ; $i++){
+                array_push($fin_score_array, $score_array[$i]);
+            }
+            for($i = 0; $i < 15; $i++){
+                array_push($fin_score_array, 0);
+            }
+            for($i = 15; $i < count($score_array); $i++){
+                array_push($fin_score_array, $score_array[$i]);
+            }
+        }
+
+        array_push($fin_score_array, $ipa, $ips);
+        
+        // print_r(array_values(value($fin_score_array))); 
+        // print("\nHello\n");
+        // print(join(',',$fin_score_array));
+
+        $test_data = array('data' => join(',',$fin_score_array));
+
+        $url = "https://jojbix5rak.execute-api.us-east-1.amazonaws.com/test/predict-major";
+        $client = new \GuzzleHttp\Client();
+        $response = $client->post($url, [
+             'headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json'],
+             'body'    => json_encode($test_data)
+        ]); 
+        $majors = json_decode($response->getBody(), true);
+        $major_result = explode(',', $majors);
+
+        // Belum difilter sesuai budget uni & jurusan.
+        $output = array_slice($major_result, 0, 3); 
+        
+        return view('uni-assessment.uni-assessment-result', ['major_result' => $output]);
     }
 
     public function careerAssessment(){
