@@ -306,6 +306,7 @@ class AssessmentController extends Controller
 
     public function careerAssessmentSave(Request $request){
         dd($request->r1, $request->r2, $request->r3, $request->r4, $request->r5); 
+        return view('career-assessment.career-assessment-q');
     }
 
     public function viewCareerResult(){

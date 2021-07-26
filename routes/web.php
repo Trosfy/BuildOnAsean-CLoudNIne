@@ -35,7 +35,7 @@ Route::post('/major-assessment/3', 'AssessmentController@majorAssessment3save');
 Route::get('/career-assessment', 'AssessmentController@careerAssessment');
 Route::get('/career-assessment-q', 'AssessmentController@careerAssessmentQ');
 Route::get('/career-assessment-result', 'AssessmentController@viewCareerResult');
-Route::post('career-assessment-q', 'AssessmentController@careerAssessmentSave'); 
+Route::post('/career-assessment-q', 'AssessmentController@careerAssessmentSave'); 
 
 // Careers
 Route::get('/careers', 'CareerController@showAll');
