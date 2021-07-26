@@ -13,24 +13,27 @@
         <div class="cardTextContainer">
             <div class="cardTitle">
                 <span class="text-14-r text-blue-dark">
-                    BINUS University
+                    {{-- BINUS University --}}
+                    {{$result->university_name}}
                 </span>
                 <br>
                 <span class="text-h4 text-blue-dark">
                     {{-- Pendidikan Dokter Gigi --}}
-                    {{$result}}
+                    {{$result->name}}
                 </span>
             </div>
             <div class="cardType">
                 <a class="type text-12-sb">IPA</a>
             </div>
             <div class="cardDesc text-14-r text-darkgrey">
-                Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ...
+                {{-- Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ... --}}
+                Also available in: {{$result->other_major}}
             </div>
             <div class="cardFooter">
                 <a href="/major/1" class="text-decoration-none text-white"><button class="btn btn-primary text-12-sb">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></button></a>
                 <span class="cardTuition text-h4 text-blue-dark">
-                    Rp 100.000.000
+                    {{-- Rp 100.000.000 --}}
+                    {{$result->budget}}
                 </span>
             </div>
         </div>
