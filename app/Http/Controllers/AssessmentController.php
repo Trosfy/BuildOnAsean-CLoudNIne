@@ -210,11 +210,7 @@ class AssessmentController extends Controller
         $jurusan = session()->get('jurusan');
         $score_array = session()->get('score_array');
         $ipa = 0;
-        $ips = 0;
-
-        // print($budget);
-        // print($jurusan);
-        // print(count($score_array)); 
+        $ips = 0; 
 
         $fin_score_array = array(); 
 
@@ -245,8 +241,6 @@ class AssessmentController extends Controller
         array_push($fin_score_array, $ipa, $ips);
         
         // print_r(array_values(value($fin_score_array))); 
-        // print("\nHello\n");
-        // print(join(',',$fin_score_array));
 
         $test_data = array('data' => join(',',$fin_score_array));
 
@@ -259,8 +253,43 @@ class AssessmentController extends Controller
         $majors = json_decode($response->getBody(), true);
         $major_result = explode(',', $majors);
 
-        // Belum difilter sesuai budget uni & jurusan.
-        $output = array_slice($major_result, 0, 3); 
+        // Filter sesuai budget dan jurusan 
+        if($jurusan == 'IPA'){
+            $data = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS university_name' , 'majors.name', 'uni_majors.budget')->where('budget', '<=', $budget)->where('stream-science', '=', 1)->orderBy('budget')->get();
+        } else {
+            $data = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS university_name' , 'majors.name', 'uni_majors.budget')->where('budget', '<=', $budget)->where('stream-social', '=', 1)->orderBy('budget')->get();
+        }
+        
+        // Filter sesuai result 
+        $hasil_persamaan_major = array(); 
+        for ($i=0; $i < count($major_result) ; $i++) { 
+            for ($j=0; $j < count($data) ; $j++) { 
+                if($major_result[$i] == $data[$j]->name){
+                    array_push($hasil_persamaan_major, $data[$j]);
+                }
+            }
+        }
+
+        // Filter output
+        $hasil = array(); 
+        $other_unis = ""; 
+        array_push($hasil, $hasil_persamaan_major[0]);
+        for ($i=1; $i < count($hasil_persamaan_major); $i++) { 
+            if(count($hasil) == 4){
+                break; 
+            }
+
+            if($hasil[count($hasil)-1]->name != $hasil_persamaan_major[$i]->name){
+                $other_unis = rtrim($other_unis, ", "); 
+                $hasil[count($hasil)-1]->other_major = $other_unis; 
+                array_push($hasil, $hasil_persamaan_major[$i]);
+                $other_unis = "";
+            } else {
+                $other_unis .= $hasil_persamaan_major[$i]->university_name . ", ";
+            }
+        }
+        
+        $output = array_slice($hasil, 0, 3); 
         
         return view('uni-assessment.uni-assessment-result', ['major_result' => $output]);
     }
@@ -271,8 +300,12 @@ class AssessmentController extends Controller
     }
 
     public function careerAssessmentQ(){
-        return view('career-assessment.career-assessment-q');
+        $riasecs = DB::table('riasec_questions')->get();
+        return view('career-assessment.career-assessment-q', ['riasecs' => $riasecs]);
+    }
 
+    public function careerAssessmentSave(Request $request){
+        dd($request->r1, $request->r2, $request->r3, $request->r4, $request->r5); 
     }
 
     public function viewCareerResult(){
