@@ -611,7 +611,7 @@ class CareerSeeder extends Seeder
 
 
 
-            ['jobtitle' => 'Intrepreter', 'major_id' => '18', 'r' => '0', 'i' => '1', 'a' => '1', 's' => '1', 'e' => '0', 'c' => '0', 'overview' => "", 'jobdesc' => "Interpret oral or sign language, or translate written text from one language into another.", 'basicskill' => "a. Follow ethical codes that protect the confidentiality of information.
+            ['jobtitle' => 'Intrepreter', 'major_id' => '18', 'r' => '0', 'i' => '1', 'a' => '1', 's' => '1', 'e' => '0', 'c' => '0', 'overview' => "Interpret oral or sign language, or translate written text from one language into another.", 'jobdesc' => "Interpret oral or sign language, or translate written text from one language into another.", 'basicskill' => "a. Follow ethical codes that protect the confidentiality of information.
             b. Translate messages simultaneously or consecutively into specified languages, orally or by using hand signs, maintaining message content, context, and style as much as possible.
             c. Listen to speakers' statements to determine meanings and to prepare translations, using electronic listening systems as necessary.", 'socialskill' => "1. Listening to others, not interrupting, and asking good questions
             2. Talking to others",  'peopleskill' => "", 'personality' => "People interested in this work like activities that include creating, designing, and making your own rules.
@@ -656,7 +656,7 @@ class CareerSeeder extends Seeder
             f. Cooperation", 'img' => 'electrical design engineer.jpg'],
 
 
-            ['jobtitle' => 'Quality Engineer', 'major_id' => '22', 'r' => '1', 'i' => '1', 'a' => '0', 's' => '0', 'e' => '0', 'c' => '1', 'overview' => "Design, develop, test, and evaluate integrated systems for managing industrial production processes, including human work factors, quality control, inventory control, logistics and material flow, cost analysis, and production coordination.", 'jobdesc' => "a. Estimate production costs, cost saving methods, and the effects of product design changes on expenditures for management review, action, and control.
+            ['jobtitle' => 'Quality Engineer', 'major_id' => '23', 'r' => '1', 'i' => '1', 'a' => '0', 's' => '0', 'e' => '0', 'c' => '1', 'overview' => "Design, develop, test, and evaluate integrated systems for managing industrial production processes, including human work factors, quality control, inventory control, logistics and material flow, cost analysis, and production coordination.", 'jobdesc' => "a. Estimate production costs, cost saving methods, and the effects of product design changes on expenditures for management review, action, and control.
             b. Plan and establish sequence of operations to fabricate and assemble parts or products and to promote efficient utilization.
             c. Analyze statistical data and product specifications to determine standards and establish quality and reliability objectives of finished product.", 'basicskill' => "1. Listening to others, not interrupting, and asking good questions
             2. Reading work related information", 'socialskill' => "",  'peopleskill' => "1.  Figuring out how a system should work and how changes in the future will affect it
