@@ -108,7 +108,7 @@ class MajorController extends Controller
         // dd($details); 
 
         $other_career_prospects = DB::table('majors')->join('careers', 'careers.major_id', '=', 'majors.id')->select('careers.id', 'careers.jobtitle', 'careers.jobdesc', 'majors.name')->where('majors.id', '=', $id)->get();
-        $other_career_prospects =  $other_career_prospects->slice(1);
+        // $other_career_prospects =  $other_career_prospects->slice(1);
         // dd($other_career_prospects);
 
         $universities = DB::table('universities')->join('uni_majors', 'uni_majors.university_id', '=', 'universities.id')->where('uni_majors.major_id', '=', $id)->orderBy('uni_majors.budget')->get();
