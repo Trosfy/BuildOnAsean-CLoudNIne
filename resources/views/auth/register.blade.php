@@ -109,20 +109,20 @@
                           
                                 <div class="row">
                                     <div class="form-group col-md-6">
-                                        <label for="name" class="col-form-label text-md-right">First {{ __('Name') }}</label>
-                                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                        <label for="first_name" class="col-form-label text-md-right">First {{ __('Name') }}</label>
+                                        <input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required autocomplete="first_name" autofocus>
     
-                                        @error('name')
+                                        @error('first_name')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="name" class="col-form-label text-md-right">Last {{ __('Name') }}</label>
-                                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                        <label for="last_name" class="col-form-label text-md-right">Last {{ __('Name') }}</label>
+                                        <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required autocomplete="last_name" autofocus>
     
-                                        @error('name')
+                                        @error('last_name')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
@@ -142,11 +142,11 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="email" class="col-form-label text-md-right">Phone Number</label>
+                                        <label for="phone" class="col-form-label text-md-right">Phone Number</label>
         
-                                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                        <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
         
-                                        @error('email')
+                                        @error('phone')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
@@ -157,22 +157,22 @@
                                     <div class="form-group col-md-6">
                                         Gender
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                            <input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="Male" checked>
                                             <label class="form-check-label" for="exampleRadios1">
                                               Male
                                             </label>
                                           </div>
                                           <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                            <input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="Female">
                                             <label class="form-check-label" for="exampleRadios2">
                                               Female
                                             </label>
                                           </div>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="birthday">Birthday</label>
+                                        <label for="dob">Birthday</label>
                                         <br>
-                                        <input type="date" id="birthday" name="birthday" class="form-control">
+                                        <input type="date" id="dob" name="dob" class="form-control">
                                     </div>
                                 </div>
                                 <div class="row">
