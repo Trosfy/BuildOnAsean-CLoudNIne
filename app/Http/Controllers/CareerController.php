@@ -46,13 +46,17 @@ class CareerController extends Controller
      */
 
     public function showAll(){
-        
+
+
+        $majors = DB::table('majors')->orderBy('name')->get();
         $careers = DB::table('careers')->join('majors', 'careers.major_id', '=', 'majors.id')->select('careers.id','jobtitle', 'majors.name AS major_name', 'overview')->orderBy('jobtitle', 'asc')->paginate(5);
-        return view('career.careers-list', compact('careers'));
+        return view('career.careers-list', compact('careers', 'majors'));
     }
 
     public function filter(Request $request)
     {
+        // dd($request->rType);
+        $majors = DB::table('majors')->orderBy('name')->get();
         if($request->sort != 'best')
         {
             if($request->rType == 'all')
@@ -71,7 +75,7 @@ class CareerController extends Controller
         
         session()->flashInput($request->input());
         // dd($careers);
-        return view('career.careers-list', compact('careers'));
+        return view('career.careers-list', compact('careers','majors'));
     }
     public function show($id)
     {

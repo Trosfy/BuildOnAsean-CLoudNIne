@@ -37,30 +37,14 @@
                            All
                         </label>
                     </div>
+                    @foreach($majors as $major)
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="rType" id="rType" {{ old('rType', 'all') == "Pendidikan Dokter Gigi" ? 'checked' : ''}} value="Pendidikan Dokter Gigi" onclick="myform.submit()">
+                        <input class="form-check-input" type="radio" name="rType" id="rType" {{ old('rType', 'all') == $major->name ? 'checked' : ''}} value="{{$major->name}}" onclick="myform.submit()">
                         <label class="form-check-label text-14-r" for="rType">
-                            Pendidikan Dokter Gigi
+                            {{$major->name}}
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="rType" id="rType" {{ old('rType', 'all') == "Teknik Informatika" ? 'checked' : ''}} value="Teknik Informatika" onclick="myform.submit()">
-                        <label class="form-check-label text-14-r" for="rType">
-                            Teknik Informatika
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="rType" id="rType" {{ old('rType', 'all') == "Bisnis" ? 'checked' : ''}} value="Bisnis" onclick="myform.submit()">
-                        <label class="form-check-label text-14-r" for="rType">
-                            Bisnis 
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="rType" id="rType" {{ old('rType', 'all') == "Kedokteran" ? 'checked' : ''}} value="Kedokteran" onclick="myform.submit()">
-                        <label class="form-check-label text-14-r" for="rType">
-                            Kedokteran
-                        </label>
-                    </div>
+                    @endforeach
                 </div>
             
         </div>

@@ -220,7 +220,9 @@
             </div>
         </div> --}}
         <div>
+        @if(old('sort', 'asc') != 'best')
         {{--{{ $majors->withQueryString()->links() }}--}}
+        @endif
         </div>
     </div>
 </div>
