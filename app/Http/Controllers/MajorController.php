@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class MajorController extends Controller
 {
@@ -47,7 +48,7 @@ class MajorController extends Controller
 
     public function showAll(){
 
-        $majors = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS uni_name', 'majors.name AS major_name','uni_majors.budget', 'majors.stream-science AS stream_science','majors.stream-social AS stream_social','majors.description')->orderBy('major_name', 'asc')->get(); 
+        $majors = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS uni_name', 'majors.name AS major_name','uni_majors.budget', 'majors.stream-science AS stream_science','majors.stream-social AS stream_social','majors.description', 'majors.id')->orderBy('major_name', 'asc')->orderBy('budget', 'asc')->get(); 
 
         return view('major.majors-list', ['majors' => $majors]);
     }
@@ -61,7 +62,7 @@ class MajorController extends Controller
                 // dd($majors);
             }else
             {
-                if($request->rType = 'IPA')
+                if($request->rType == 'IPA')
                     $majors = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS uni_name', 'majors.name AS major_name','uni_majors.budget', 'majors.stream-science AS stream_science','majors.stream-social AS stream_social','majors.description', 'majors.id')->where('majors.stream-science', '=', 1)->orderBy('majors.name', $request->sort)->orderBy('budget', $request->sort)->get(); 
                 else
                     $majors = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS uni_name', 'majors.name AS major_name','uni_majors.budget', 'majors.stream-science AS stream_science','majors.stream-social AS stream_social','majors.description', 'majors.id')->where('majors.stream-social', '=', 1)->orderBy('majors.name', $request->sort)->orderBy('budget', $request->sort)->get(); 
@@ -71,6 +72,30 @@ class MajorController extends Controller
         else
         {
             //best match
+            $majors = Auth::user()->api_result;
+            $major_result = explode(',', $majors);
+
+            // dd($request->rType);
+            // Filter sesuai budget dan jurusan 
+            if($request->rType == 'IPA'){
+                $data = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS uni_name', 'majors.name AS major_name','uni_majors.budget', 'majors.stream-science AS stream_science','majors.stream-social AS stream_social','majors.description','majors.id')->where('stream-science', '=', 1)->orderBy('budget')->get();
+            } else if($request->rType == 'IPS'){
+                $data = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS uni_name', 'majors.name AS major_name','uni_majors.budget', 'majors.stream-science AS stream_science','majors.stream-social AS stream_social','majors.description','majors.id')->where('stream-social', '=', 1)->orderBy('budget')->get();
+            }else
+                $data = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS uni_name', 'majors.name AS major_name','uni_majors.budget', 'majors.stream-science AS stream_science','majors.stream-social AS stream_social','majors.description','majors.id')->orderBy('budget')->get();
+            
+            // Filter sesuai result 
+            $hasil_persamaan_major = array(); 
+            for ($i=0; $i < count($major_result) ; $i++) { 
+                for ($j=0; $j < count($data) ; $j++) { 
+                    if($major_result[$i] == $data[$j]->major_name){
+                        array_push($hasil_persamaan_major, $data[$j]);
+                    }
+                }
+            }
+            
+            $majors = $hasil_persamaan_major;
+            // dd($majors);
         }
         session()->flashInput($request->input());
         // $majors = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS uni_name', 'majors.name AS major_name','uni_majors.budget', 'majors.stream-science AS stream_science','majors.stream-social AS stream_social','majors.description')->get(); 

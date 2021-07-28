@@ -95,10 +95,10 @@
                     </div>
                     <div class="cardDesc text-14-r text-darkgrey">
                         {{-- Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ... --}}
-                        {{$major->description}}
+                        {{Str::of($major->description)->words(40, ' . . .')}}
                     </div>
                     <div class="cardFooter">
-                        <a href="/major/1" class="text-decoration-none text-white"><button class="btn btn-primary text-12-sb">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></button></a>
+                        <a href="/major/{{$major->id}}" class="text-decoration-none text-white"><button class="btn btn-primary text-12-sb">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></button></a>
                         <span class="cardTuition text-h4 text-blue-dark">
                             {{-- Rp 100.000.000 --}}
                             {{$major->budget}}
