@@ -52,10 +52,11 @@
                         </span>
                         <br>
                         <span class="text-h3 text-blue-light">
-                            @if (strlen($details->jurusansma))
-                                {{$details->jurusansma}}
-                            @else
-                                IPA, IPS
+                            @if($details->stream_science == 1)
+                                <a class="type text-12-sb">IPA</a>
+                            @endif
+                            @if($details->stream_social == 1)
+                                <a class="type text-12-sb">IPS</a>
                             @endif
                         </span>
                     </div>
