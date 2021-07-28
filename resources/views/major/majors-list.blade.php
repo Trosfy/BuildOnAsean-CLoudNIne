@@ -84,7 +84,12 @@
                         </span>
                     </div>
                     <div class="cardType">
-                        <a class="type text-12-sb">{{$major->jurusansma}}</a>
+                        @if (strlen($major->jurusansma) == 3)
+                            <a class="type text-12-sb">{{$major->jurusansma}}</a>
+                        @else
+                            <a class="type text-12-sb">IPA</a>
+                            <a class="type text-12-sb">IPS</a>
+                        @endif
                     </div>
                     <div class="cardDesc text-14-r text-darkgrey">
                         {{-- Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ... --}}
