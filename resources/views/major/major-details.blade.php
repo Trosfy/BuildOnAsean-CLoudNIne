@@ -12,10 +12,10 @@
                         <ol class="breadcrumb ">
                         <li class="breadcrumb-item "><a href="/" class="text-decoration-none text-green-dark">Home</a></li>
                         <li class="breadcrumb-item "><a href="/majors" class="text-decoration-none text-green-dark">Majors</a></li>
-                        <li class="breadcrumb-item active text-green" aria-current="page">Pendidikan Dokter Gigi</li>
+                        <li class="breadcrumb-item active text-green" aria-current="page">{{$details->major_name}}</li>
                         </ol>
                     </nav> 
-                    <span class="text-h2 text-blue-dark">Pendidikan Dokter Gigi</span>
+                    <span class="text-h2 text-blue-dark">{{$details->major_name}}</span>
                 </div>
             </a>
             <div class="d-flex container-50vh p3 bg-white flex-column-r">
@@ -37,11 +37,12 @@
                 </div>
                 <div class="flex-grow-1 careerDesc order-3-r"data-aos="fade-up">
                     <span class="text-h3 text-green-dark">
-                        What Dentists do
+                        What {{$details->career_name}}s do
                     </span> 
                     <br>
                     <span class="text-14-r text-darkgrey">
-                        Counsel and advise individuals and groups to promote optimum mental and emotional health, with an emphasis on prevention. May help individuals deal with a broad range of mental health issues, such as those associated with addictions and substance abuse; family, parenting, and marital problems; stress management; self-esteem; or aging.
+                        {{-- Counsel and advise individuals and groups to promote optimum mental and emotional health, with an emphasis on prevention. May help individuals deal with a broad range of mental health issues, such as those associated with addictions and substance abuse; family, parenting, and marital problems; stress management; self-esteem; or aging. --}}
+                        {{$details->jobdesc}}
                     </span>
                 </div>
                 <div class="careerJurusan d-flex flex-column p2"data-aos="zoom-in-up">
@@ -51,7 +52,11 @@
                         </span>
                         <br>
                         <span class="text-h3 text-blue-light">
-                            IPA
+                            @if (strlen($details->jurusansma))
+                                {{$details->jurusansma}}
+                            @else
+                                IPA, IPS
+                            @endif
                         </span>
                     </div>
                     <div class="jurusanContainer bg-green-dark shadowGreen mt-3" id="tuition">
@@ -59,8 +64,12 @@
                             Tuition Fee
                         </span>
                         <br>
+                        <span class="text-12-sb text-green-light">
+                            Starts from
+                        </span>
                         <span class="text-20-sb text-green-light">
-                            Rp 100.000.000
+                            {{-- Rp 100.000.000 --}}
+                            {{$details->budget}}
                         </span>
                     </div>
                 </div>
@@ -86,68 +95,24 @@
                     <div class="text-center d-flex justify-content-between-r" data-aos="zoom-in-up">
                         <div class="container-fluid">
                             <div class="row">
-                              <div class="col-sm-4">
-                                <div class="cardPContainer shadow">
-                                    <div class="cardPImgContainer">
-                                        <img src="{{asset('storage/assets/binus.jpg')}}" alt="image">
-                                    </div>
-                                    <div class="cardTextContainer">
-                                        <div class="cardPTextTitle text-16-sb text-blue-dark">
-                                            BINUS University
-                                        </div>
-                                        <br>
-                                        <div >
-                                            <button class="btn btn-primary">Visit website</button>
-                                        </div>
-                                    </div>
-                                </div>
-                              </div>
-                              <div class="col-sm-4">
-                                <div class="cardPContainer shadow">
-                                    <div class="cardPImgContainer">
-                                        <img src="{{asset('storage/assets/binus.jpg')}}" alt="image">
-                                    </div>
-                                    <div class="cardTextContainer">
-                                        <div class="cardPTextTitle text-16-sb text-blue-dark">
-                                            BINUS University
-                                        </div>
-                                        <br>
-                                        <div >
-                                            <button class="btn btn-primary">Visit website</button>
+                                @foreach($universities as $uni)
+                                    <div class="col-sm-4">
+                                        <div class="cardPContainer shadow">
+                                            <div class="cardPImgContainer">
+                                                <img src="{{asset('storage/assets/binus.jpg')}}" alt="image">
+                                            </div>
+                                            <div class="cardTextContainer">
+                                                <div class="cardPTextTitle text-16-sb text-blue-dark">
+                                                    {{$uni->name}}
+                                                </div>
+                                                <br>
+                                                <div >
+                                                    <button class="btn btn-primary" onclick="location.href='{{$uni->details}}'">Visit website</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                              </div>
-                              <div class="col-sm-4">
-                                <div class="cardPContainer shadow">
-                                    <div class="cardPImgContainer">
-                                        <img src="{{asset('storage/assets/binus.jpg')}}" alt="image">
-                                    </div>
-                                    <div class="cardTextContainer">
-                                        <div class="cardPTextTitle text-16-sb text-blue-dark">
-                                            BINUS University
-                                        </div>
-                                        <br>
-                                        <div >
-                                            <button class="btn btn-primary">Visit website</button>
-                                        </div>
-                                    </div>
-                                </div>
-                              </div>
-                              <div class="col-sm-4">
-                                <div class="cardPContainer shadow">
-                                    <div class="cardPImgContainer">
-                                        <img src="{{asset('storage/assets/binus.jpg')}}" alt="image">
-                                    </div>
-                                    <div class="cardTextContainer">
-                                        <div class="cardPTextTitle text-16-sb text-blue-dark">
-                                            BINUS University
-                                        </div>
-                                        <br>
-                                        <div >
-                                            <button class="btn btn-primary">Visit website</button>
-                                        </div>
-                                    </div>
+                                @endforeach
                                 </div>
                               </div>
                             </div>
@@ -177,78 +142,33 @@
 
                     <br>
                     <div class=" d-flex flex-column">
-                        <div class="cardContainer shadow"data-aos="zoom-in-up">
-                            <div class="cardImgContainer">
-                                <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
-                            </div>
-                            <div class="cardTextContainer">
-                                <div class="cardTitle">
-                                    <span class="text-h4 text-blue-dark mt-4">
-                                        Dentist
-                                    </span>
+                        @foreach ($other_career_prospects as $prospects)
+                            <div class="cardContainer shadow"data-aos="zoom-in-up">
+                                <div class="cardImgContainer">
+                                    <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
                                 </div>
-                                <div class="cardType">
-                                    <a class="type text-12-sb">Pendidikan Dokter Gigi</a>
-                                </div>
-                                <div class="cardDesc text-14-r text-darkgrey">
-                                    Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ...
-                                </div>
-                                <div class="cardFooter">
-                                    <button class="btn btn-primary btnRightt text-12-sb"><a href="/career/1" class="text-decoration-none text-white">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></a></button>
-                                    {{-- <span class="cardTuition text-h4">
-                                        Rp 100.000.000
-                                    </span> --}}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cardContainer shadow" data-aos="zoom-in-up">
-                            <div class="cardImgContainer">
-                                <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
-                            </div>
-                            <div class="cardTextContainer">
-                                <div class="cardTitle">
-                                    <span class="text-h4 text-blue-dark mt-4">
-                                        Dentist
-                                    </span>
-                                </div>
-                                <div class="cardType">
-                                    <a class="type text-12-sb">Pendidikan Dokter Gigi</a>
-                                </div>
-                                <div class="cardDesc text-14-r text-darkgrey">
-                                    Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ...
-                                </div>
-                                <div class="cardFooter">
-                                    <button class="btn btn-primary btnRightt text-12-sb"><a href="/career/1" class="text-decoration-none text-white">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></a></button>
-                                    {{-- <span class="cardTuition text-h4">
-                                        Rp 100.000.000
-                                    </span> --}}
+                                <div class="cardTextContainer">
+                                    <div class="cardTitle">
+                                        <span class="text-h4 text-blue-dark mt-4">
+                                            {{-- Dentist --}}
+                                            {{$prospects->jobtitle}}
+                                        </span>
+                                    </div>
+                                    <div class="cardType">
+                                        <a class="type text-12-sb">{{$prospects->name}}</a>
+                                    </div>
+                                    <div class="cardDesc text-14-r text-darkgrey">
+                                        {{$prospects->jobdesc}}
+                                    </div>
+                                    <div class="cardFooter">
+                                        <button class="btn btn-primary btnRightt text-12-sb"><a href="/career/{{$prospects->id}}" class="text-decoration-none text-white">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></a></button>
+                                        {{-- <span class="cardTuition text-h4">
+                                            Rp 100.000.000
+                                        </span> --}}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="cardContainer shadow"data-aos="zoom-in-up">
-                            <div class="cardImgContainer">
-                                <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
-                            </div>
-                            <div class="cardTextContainer">
-                                <div class="cardTitle">
-                                    <span class="text-h4 text-blue-dark mt-4">
-                                        Dentist
-                                    </span>
-                                </div>
-                                <div class="cardType">
-                                    <a class="type text-12-sb">Pendidikan Dokter Gigi</a>
-                                </div>
-                                <div class="cardDesc text-14-r text-darkgrey">
-                                    Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ...
-                                </div>
-                                <div class="cardFooter">
-                                    <button class="btn btn-primary btnRightt text-12-sb"><a href="/career/1" class="text-decoration-none text-white">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></a></button>
-                                    {{-- <span class="cardTuition text-h4">
-                                        Rp 100.000.000
-                                    </span> --}}
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
