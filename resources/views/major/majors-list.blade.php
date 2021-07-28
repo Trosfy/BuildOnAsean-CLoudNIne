@@ -22,48 +22,50 @@
         </div>
     </div>
 </div>
-
+<form method="POST" action="/majors" class="text-14-sb" name="myform">
 <div class="container-200vh d-flex p2 bg-pink-light justify-content-center">
     <div class="left p2">
         {{-- <span>Filters</span> --}}
         <div class="filterContainer p2 mt-5 shadowGreen">
-            <form method="POST" action="{{ route('register') }}" class="text-14-sb">
+            
                 @csrf
                 <div class="form-group col-md-6 mb-0">
                     <span class="text-16-sb">Jurusan</span>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="rType" id="radioAll" value="option1" checked>
+                        <input class="form-check-input" type="radio" name="rType" id="rType" {{ old('rType', 'all') == 'all' ? 'checked' : ''}} value="all" onclick="myform.submit()">
                         <label class="form-check-label text-14-r" for="radioAll">
                             All
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="rType" id="radioCareer" value="option2">
+                        <input class="form-check-input" type="radio" name="rType" id="rType" {{ old('rType', 'all') == 'IPA' ? 'checked' : ''}} value="IPA" onclick="myform.submit()">
                         <label class="form-check-label text-14-r" for="radioCareer">
                             IPA
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="rType" id="radioMajor" value="option3">
+                        <input class="form-check-input" type="radio" name="rType" id="rType" {{ old('rType', 'all') == 'IPS' ? 'checked' : ''}} value="IPS" onclick="myform.submit()">
                         <label class="form-check-label text-14-r" for="radioMajor">
                             IPS
                         </label>
                     </div>
                 </div>
-            </form>
+            
         </div>
     </div>
     <div class="right p2">
         <div>
-            <form name="myform" action="" method="post"  class="text-14-sb">
+            
                 <label for="sortby" class="text-white">Sort by </label>
-                {{-- <Select onchange="myform.submit()" name="test" id="sortby"> --}}
-                <Select name="test" id="sortby" class="p1 ml-2">
-                    <option value="">Alphabetical (A-Z)</option> 
-                    <option value="">Alphabetical (Z-A)</option>                   
-                    <option value="">Best Match </option> 
+                <Select onchange="myform.submit()" name="sort" id="sortby" class="p1 ml-2">
+                <!-- <Select name="sort" id="sortby" class="p1 ml-2"> -->
+                    <option value="asc" {{ old('sort', 'asc') == 'asc' ? 'selected' : '' }}>Alphabetical (A-Z)</option> 
+                    <option value="desc" {{ old('sort', 'asc') == 'desc' ? 'selected' : '' }}>Alphabetical (Z-A)</option> 
+                    @if(Auth::user() && Auth::user()->api_result != null)                  
+                        <option value="best" {{ old('sort', 'asc') == 'best' ? 'selected' : '' }}>Best Match </option> 
+                    @endif
                 </select>
-            </form>
+            
             
         </div>
         @foreach ($majors as $major)
@@ -80,20 +82,20 @@
                         <br>
                         <span class="text-h4 text-blue-dark">
                             {{-- Pendidikan Dokter Gigi --}}
-                            {{$major->jobtitle}}
+                            {{$major->major_name}}
                         </span>
                     </div>
                     <div class="cardType">
-                        @if (strlen($major->jurusansma) == 3)
-                            <a class="type text-12-sb">{{$major->jurusansma}}</a>
-                        @else
+                        @if($major->stream_science == 1)
                             <a class="type text-12-sb">IPA</a>
+                        @endif
+                        @if($major->stream_social == 1)
                             <a class="type text-12-sb">IPS</a>
                         @endif
                     </div>
                     <div class="cardDesc text-14-r text-darkgrey">
                         {{-- Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ... --}}
-                        {{$major->overview}}
+                        {{$major->description}}
                     </div>
                     <div class="cardFooter">
                         <a href="/major/1" class="text-decoration-none text-white"><button class="btn btn-primary text-12-sb">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></button></a>
@@ -222,5 +224,5 @@
         </div>
     </div>
 </div>
-
+</form>
 @endsection

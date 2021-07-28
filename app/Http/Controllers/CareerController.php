@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CareerController extends Controller
 {
@@ -46,9 +47,32 @@ class CareerController extends Controller
 
     public function showAll(){
         
-        return view('career.careers-list');
+        $careers = DB::table('careers')->join('majors', 'careers.major_id', '=', 'majors.id')->select('careers.id','jobtitle', 'majors.name AS major_name', 'overview')->orderBy('jobtitle', 'asc')->paginate(5);
+        return view('career.careers-list', compact('careers'));
     }
 
+    public function filter(Request $request)
+    {
+        if($request->sort != 'best')
+        {
+            if($request->rType == 'all')
+            {
+                $careers = DB::table('careers')->join('majors', 'careers.major_id', '=', 'majors.id')->select('careers.id','jobtitle', 'majors.name AS major_name', 'overview')->orderBy('jobtitle', $request->sort)->paginate(5);
+            }else
+            {
+                $careers = DB::table('careers')->join('majors', 'careers.major_id', '=', 'majors.id')->select('careers.id','jobtitle', 'majors.name AS major_name', 'overview')->where('majors.name', '=', $request->rType)->orderBy('jobtitle', $request->sort)->paginate(5);
+            }
+            
+        }
+        else
+        {
+            //best match
+        }
+        
+        session()->flashInput($request->input());
+        // dd($careers);
+        return view('career.careers-list', compact('careers'));
+    }
     public function show($id)
     {
         //

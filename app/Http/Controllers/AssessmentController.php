@@ -305,6 +305,7 @@ class AssessmentController extends Controller
     }
 
     public function viewMajorResult(){
+        $user = Auth::user();
         $budget = session()->get('budget');
         $jurusan = session()->get('jurusan');
         $score_array = session()->get('score_array');
@@ -350,6 +351,11 @@ class AssessmentController extends Controller
              'body'    => json_encode($test_data)
         ]); 
         $majors = json_decode($response->getBody(), true);
+
+        $user->budget = $budget;
+        $user->api_result = $majors;
+        $user->save();
+
         $major_result = explode(',', $majors);
 
         // Filter sesuai budget dan jurusan 

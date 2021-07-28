@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PageController@landing');
 Route::get('/about', 'PageController@about');
 Route::get('/search', 'PageController@search');
+Route::get('/home', function(){
+    return redirect('/');
+});
 // Route::get('/dashboard', 'PageController@dashboard');
 
 Route::middleware(['auth'])->group(function(){
@@ -42,10 +45,12 @@ Route::get('/career-assessment', 'AssessmentController@careerAssessment');
 
 // Careers
 Route::get('/careers', 'CareerController@showAll');
+Route::post('/careers', 'CareerController@filter');
 Route::get('/career/{id}', 'CareerController@show');
 
 //Majors
 Route::get('/majors', 'MajorController@showAll');
+Route::post('majors', 'MajorController@filter');
 Route::get('/major/{id}', 'MajorController@show');
 
 //Tes riasec

@@ -31,7 +31,7 @@ class CreateCareersTable extends Migration
             $table->longText('socialskill');
             $table->longText('peopleskill');
             $table->longText('personality'); 
-            $table->string('img');
+            $table->string('img')->nullable();
         });
     }
 
