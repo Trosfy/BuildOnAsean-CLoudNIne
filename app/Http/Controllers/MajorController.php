@@ -57,13 +57,14 @@ class MajorController extends Controller
         {
             if($request->rType == 'all')
             {
-                $majors = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS uni_name', 'majors.name AS major_name','uni_majors.budget', 'majors.stream-science AS stream_science','majors.stream-social AS stream_social','majors.description')->orderBy('majors.name', $request->sort)->orderBy('budget', $request->sort)->get(); 
+                $majors = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS uni_name', 'majors.name AS major_name','uni_majors.budget', 'majors.stream-science AS stream_science','majors.stream-social AS stream_social','majors.description', 'majors.id')->orderBy('majors.name', $request->sort)->orderBy('budget', $request->sort)->get(); 
+                // dd($majors);
             }else
             {
                 if($request->rType = 'IPA')
-                    $majors = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS uni_name', 'majors.name AS major_name','uni_majors.budget', 'majors.stream-science AS stream_science','majors.stream-social AS stream_social','majors.description')->where('majors.stream-science', '=', 1)->orderBy('majors.name', $request->sort)->orderBy('budget', $request->sort)->get(); 
+                    $majors = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS uni_name', 'majors.name AS major_name','uni_majors.budget', 'majors.stream-science AS stream_science','majors.stream-social AS stream_social','majors.description', 'majors.id')->where('majors.stream-science', '=', 1)->orderBy('majors.name', $request->sort)->orderBy('budget', $request->sort)->get(); 
                 else
-                    $majors = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS uni_name', 'majors.name AS major_name','uni_majors.budget', 'majors.stream-science AS stream_science','majors.stream-social AS stream_social','majors.description')->where('majors.stream-social', '=', 1)->orderBy('majors.name', $request->sort)->orderBy('budget', $request->sort)->get(); 
+                    $majors = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS uni_name', 'majors.name AS major_name','uni_majors.budget', 'majors.stream-science AS stream_science','majors.stream-social AS stream_social','majors.description', 'majors.id')->where('majors.stream-social', '=', 1)->orderBy('majors.name', $request->sort)->orderBy('budget', $request->sort)->get(); 
             }
             
         }
@@ -78,9 +79,18 @@ class MajorController extends Controller
     }
     public function show($id)
     {
-        //
-        return view('major.major-details');
+        $details = DB::table('majors')->join('uni_majors', 'uni_majors.major_id', '=', 'majors.id')->join('universities', 'uni_majors.university_id', '=', 'universities.id')->join('careers', 'careers.major_id', '=', 'majors.id')->select('majors.name AS major_name', 'careers.jurusansma', 'uni_majors.budget', 'careers.jobdesc', 'careers.jobtitle as career_name', 'careers.overview', 'careers.id as career_id')->where('majors.id', '=', $id)->orderBy('uni_majors.budget')->first(); 
+        // dd($details); 
 
+        $other_career_prospects = DB::table('majors')->join('careers', 'careers.major_id', '=', 'majors.id')->select('careers.id', 'careers.jobtitle', 'careers.jobdesc', 'majors.name')->where('majors.id', '=', $id)->get();
+        $other_career_prospects =  $other_career_prospects->slice(1);
+        // dd($other_career_prospects);
+
+        $universities = DB::table('universities')->join('uni_majors', 'uni_majors.university_id', '=', 'universities.id')->where('uni_majors.major_id', '=', $id)->orderBy('uni_majors.budget')->get();
+        // dd($universities); 
+
+        // dd($universities); 
+        return view('major.major-details', ['details' => $details, 'universities' => $universities, 'other_career_prospects' => $other_career_prospects]);
     }
 
     /**
