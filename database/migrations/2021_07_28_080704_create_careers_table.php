@@ -18,15 +18,14 @@ class CreateCareersTable extends Migration
             $table->string('jobtitle');
             $table->unsignedInteger('major_id');
             $table->foreign('major_id')->references('id')->on('majors')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('jurusansma'); 
             $table->boolean('r');
             $table->boolean('i');
             $table->boolean('a');
             $table->boolean('s');
             $table->boolean('e');
             $table->boolean('c');
-            $table->string('overview');
-            $table->string('jobdesc');
+            $table->longText('overview');
+            $table->longText('jobdesc');
             $table->longText('basicskill');
             $table->longText('socialskill');
             $table->longText('peopleskill');
