@@ -71,7 +71,8 @@
         @foreach ($majors as $major)
             <div class="cardContainer shadow"data-aos="zoom-in-up">
                 <div class="cardImgContainer">
-                    <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
+                    {{-- {{$major->img}} --}}
+                    <img src="{{asset('storage/assets/images/majors/'.$major->img)}}" alt="image">
                 </div>
                 <div class="cardTextContainer w-100 w-100">
                     <div class="cardTitle">

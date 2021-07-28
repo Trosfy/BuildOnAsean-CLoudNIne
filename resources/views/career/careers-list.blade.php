@@ -67,7 +67,9 @@
         @foreach($careers as $career)
         <div class="cardContainer shadow"data-aos="zoom-in-up">
             <div class="cardImgContainer">
-                <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
+                {{-- <img src="{{asset('storage/assets/dentist.png')}}" alt="image"> --}}
+                {{-- {{$career->img}} --}}
+                <img src="{{asset('storage/assets/images/careers/'.$career->img)}}" alt="image">
             </div>
             <div class="cardTextContainer">
                 <div class="cardTitle">
