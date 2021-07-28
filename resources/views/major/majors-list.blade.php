@@ -98,7 +98,7 @@
                         {{Str::of($major->description)->words(40, ' . . .')}}
                     </div>
                     <div class="cardFooter">
-                        <a href="/major/{{$major->id}}" class="text-decoration-none text-white"><button class="btn btn-primary text-12-sb">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></button></a>
+                    <button type="button" class="btn btn-primary text-12-sb" onclick="window.location.href='/major/{{$major->id}}'">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></button>
                         <span class="cardTuition text-h4 text-blue-dark">
                             {{-- Rp 100.000.000 --}}
                             {{$major->budget}}
@@ -220,7 +220,7 @@
             </div>
         </div> --}}
         <div>
-            Pagination
+        {{--{{ $majors->withQueryString()->links() }}--}}
         </div>
     </div>
 </div>
