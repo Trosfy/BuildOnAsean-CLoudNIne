@@ -159,7 +159,7 @@
                                         <a class="type text-12-sb">{{$prospects->name}}</a>
                                     </div>
                                     <div class="cardDesc text-14-r text-darkgrey">
-                                        {{$prospects->jobdesc}}
+                                        {{$prospects->overview}}
                                     </div>
                                     <div class="cardFooter">
                                         <button class="btn btn-primary btnRightt text-12-sb"><a href="/career/{{$prospects->id}}" class="text-decoration-none text-white">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></a></button>
