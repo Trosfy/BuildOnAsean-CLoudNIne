@@ -19,6 +19,7 @@ class CreateMajorsTable extends Migration
             $table->boolean('stream-science');
             $table->boolean('stream-social');
             $table->longText('description')->nullable();
+            $table->string('img');
         });
     }
 
