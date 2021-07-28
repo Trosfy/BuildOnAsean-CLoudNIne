@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration
             $table->date('dob');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('riasec')->nullable();
+            $table->longText('api_result')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
