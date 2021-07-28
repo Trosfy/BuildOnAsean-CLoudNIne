@@ -41,7 +41,6 @@
                     </span> 
                     <br>
                     <span class="text-14-r text-darkgrey">
-                        {{-- Counsel and advise individuals and groups to promote optimum mental and emotional health, with an emphasis on prevention. May help individuals deal with a broad range of mental health issues, such as those associated with addictions and substance abuse; family, parenting, and marital problems; stress management; self-esteem; or aging. --}}
                         {{$details->jobdesc}}
                     </span>
                 </div>
@@ -58,6 +57,7 @@
                             @if($details->stream_social == 1)
                                 <a class="type text-12-sb">IPS</a>
                             @endif
+                            &nbsp;
                         </span>
                     </div>
                     <div class="jurusanContainer bg-green-dark shadowGreen mt-3" id="tuition">
@@ -68,9 +68,9 @@
                         <span class="text-12-sb text-green-light">
                             Starts from
                         </span>
+                        <br>
                         <span class="text-20-sb text-green-light">
-                            {{-- Rp 100.000.000 --}}
-                            {{$details->budget}}
+                            Rp {{$details->budget}}
                         </span>
                     </div>
                 </div>
@@ -148,24 +148,21 @@
                                 <div class="cardImgContainer">
                                     <img src="{{asset('storage/assets/images/careers/'.$prospects->img)}}" alt="image">
                                 </div>
-                                <div class="cardTextContainer">
+                                <div class="cardTextContainer d-flex flex-column justify-content-center w-100">
                                     <div class="cardTitle">
                                         <span class="text-h4 text-blue-dark mt-4">
-                                            {{-- Dentist --}}
-                                            {{$prospects->jobtitle}}
+                                            <a href="/career/{{$prospects->id}}" class="text-decoration-none text-blue-dark">
+                                            {{$prospects->jobtitle}}</a>
                                         </span>
                                     </div>
                                     <div class="cardType">
-                                        <a class="type text-12-sb">{{$prospects->name}}</a>
+                                        <a class="type text-12-sb" href="#">{{$prospects->name}}</a>
                                     </div>
                                     <div class="cardDesc text-14-r text-darkgrey">
                                         {{Str::of($prospects->overview)->words(20, ' . . .')}}
                                     </div>
                                     <div class="cardFooter">
                                         <button class="btn btn-primary btnRightt text-12-sb"><a href="/career/{{$prospects->id}}" class="text-decoration-none text-white">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></a></button>
-                                        {{-- <span class="cardTuition text-h4">
-                                            Rp 100.000.000
-                                        </span> --}}
                                     </div>
                                 </div>
                             </div>

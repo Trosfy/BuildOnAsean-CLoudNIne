@@ -67,27 +67,22 @@
         @foreach($careers as $career)
         <div class="cardContainer shadow"data-aos="zoom-in-up">
             <div class="cardImgContainer">
-                {{-- <img src="{{asset('storage/assets/dentist.png')}}" alt="image"> --}}
-                {{-- {{$career->img}} --}}
                 <img src="{{asset('storage/assets/images/careers/'.$career->img)}}" alt="image">
             </div>
-            <div class="cardTextContainer">
+            <div class="cardTextContainer d-flex flex-column justify-content-center w-100">
                 <div class="cardTitle">
                     <span class="text-h4 text-blue-dark mt-4">
-                        {{$career->jobtitle}}
+                        <a href="/career/{{$career->id}}" class="text-decoration-none text-blue-dark">{{$career->jobtitle}}</a>
                     </span>
                 </div>
                 <div class="cardType">
-                    <a class="type text-12-sb">{{$career->major_name}}</a>
+                    <a class="type text-12-sb" href="/major/{{$career->major_id}}">{{$career->major_name}}</a>
                 </div>
                 <div class="cardDesc text-14-r text-darkgrey">
                     {{Str::of($career->overview)->words(20, ' . . .')}}
                 </div>
                 <div class="cardFooter">
                     <button class="btn btn-primary btnRightt text-12-sb"><a href="/career/{{$career->id}}" class="text-decoration-none text-white">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></a></button>
-                    {{-- <span class="cardTuition text-h4">
-                        Rp 100.000.000
-                    </span> --}}
                 </div>
             </div>
         </div>

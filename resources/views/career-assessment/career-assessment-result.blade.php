@@ -10,84 +10,27 @@
 </span>
 {{-- Your RIASEC code is : {{$quizresult}} --}}
 @foreach ($career_recommendation as $recommendation)
-    <div class="cardContainer shadow"data-aos="zoom-in-up">
-        <div class="cardImgContainer">
-            <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
-        </div>
-        <div class="cardTextContainer w-100">
-            <div class="cardTitle">
-                <span class="text-h4 text-blue-dark mt-4">
-                    {{$recommendation->jobtitle}}
-                </span>
-            </div>
-            <div class="cardType">
-                {{-- <a class="type text-12-sb">Pendidikan Dokter Gigi</a> --}}
-                <a class="type text-12-sb">{{$recommendation->name}}</a>
-            </div>
-            <div class="cardDesc text-14-r text-darkgrey">
-                {{-- Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ... --}}
-                {{$recommendation->overview}}
-            </div>
-            <div class="cardFooter">
-                <button class="btn btn-primary btnRightt text-12-sb"><a href="/career/1" class="text-decoration-none text-white">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></a></button>
-                {{-- <span class="cardTuition text-h4">
-                    Rp 100.000.000
-                </span> --}}
-            </div>
-        </div>
-    </div>
-@endforeach
-
-{{-- <div class="cardContainer shadow" data-aos="zoom-in-up">
-    <div class="cardImgContainer">
-        <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
-    </div>
-    <div class="cardTextContainer w-100">
-        <div class="cardTitle">
-            <span class="text-h4 text-blue-dark mt-4">
-                Dentist
-            </span>
-        </div>
-        <div class="cardType">
-            <a class="type text-12-sb">Pendidikan Dokter Gigi</a>
-        </div>
-        <div class="cardDesc text-14-r text-darkgrey">
-            Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ...
-        </div>
-        <div class="cardFooter">
-            <button class="btn btn-primary btnRightt text-12-sb"><a href="/career/1" class="text-decoration-none text-white">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></a></button>
-            {{-- <span class="cardTuition text-h4">
-                Rp 100.000.000
-            </span> --}}
-        {{-- </div>
-    </div>
-</div>
 <div class="cardContainer shadow"data-aos="zoom-in-up">
     <div class="cardImgContainer">
-        <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
+        <img src="{{asset('storage/assets/images/careers/'.$recommendation->career_img)}}" alt="image">
     </div>
-    <div class="cardTextContainer w-100">
+    <div class="cardTextContainer d-flex flex-column justify-content-center w-100">
         <div class="cardTitle">
             <span class="text-h4 text-blue-dark mt-4">
-                Dentist
+                <a href="/career/{{$recommendation->career_id}}" class="text-decoration-none text-blue-dark">{{$recommendation->jobtitle}}</a>
             </span>
         </div>
         <div class="cardType">
-            <a class="type text-12-sb">Pendidikan Dokter Gigi</a>
+            <a class="type text-12-sb" href="/major/{{$recommendation->major_id}}">{{$recommendation->name}}</a>
         </div>
         <div class="cardDesc text-14-r text-darkgrey">
-            Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ...
+            {{Str::of($recommendation->overview)->words(20, ' . . .')}}
         </div>
         <div class="cardFooter">
-            <button class="btn btn-primary btnRightt text-12-sb"><a href="/career/1" class="text-decoration-none text-white">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></a></button>
-            {{-- <span class="cardTuition text-h4">
-                Rp 100.000.000
-            </span> --}}
-        {{-- </div>
+            <button class="btn btn-primary btnRightt text-12-sb"><a href="/career/{{$recommendation->career_id}}" class="text-decoration-none text-white">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></a></button>
+        </div>
     </div>
-</div> --}} 
+</div>
+@endforeach
 
-{{-- <button class="btn btn-primary btnRight">
-    See all
-</button> --}}
 @endsection

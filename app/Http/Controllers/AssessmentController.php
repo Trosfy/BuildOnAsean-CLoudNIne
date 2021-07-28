@@ -236,7 +236,7 @@ class AssessmentController extends Controller
         // print($recommend3);
 
         // Ambil dari db berdasarkan index 
-        $career_recommendation = DB::table('careers')->join('majors', 'majors.id', '=', 'careers.major_id')->where('careers.id', "=", $recommend1+1)->orWhere('careers.id', '=', $recommend2+1)->orWhere('careers.id', '=', $recommend3+1)->get();
+        $career_recommendation = DB::table('careers')->join('majors', 'majors.id', '=', 'careers.major_id')->where('careers.id', "=", $recommend1+1)->orWhere('careers.id', '=', $recommend2+1)->orWhere('careers.id', '=', $recommend3+1)->select('*','careers.id as career_id', 'careers.img as career_img')->get();
         // dd($career_recommendation); 
 
         return view('career-assessment.career-assessment-result', ['quizresult' => $quizresult, 'career_recommendation' => $career_recommendation]); 
