@@ -1308,7 +1308,9 @@ table .form-group{
     .jurusanContainer #tuition{
         background-color: var(--color-green-dark) !important;
     }
-
+    .resultContainer{
+        padding: 0 5rem !important;
+    }
 
 }
 /*  */
