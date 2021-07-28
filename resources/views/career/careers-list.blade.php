@@ -79,7 +79,7 @@
                     <a class="type text-12-sb">{{$career->major_name}}</a>
                 </div>
                 <div class="cardDesc text-14-r text-darkgrey">
-                    {{Str::of($career->overview)->words(40, ' . . .')}}
+                    {{Str::of($career->overview)->words(20, ' . . .')}}
                 </div>
                 <div class="cardFooter">
                     <button class="btn btn-primary btnRightt text-12-sb"><a href="/career/{{$career->id}}" class="text-decoration-none text-white">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></a></button>

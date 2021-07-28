@@ -95,7 +95,7 @@
                     </div>
                     <div class="cardDesc text-14-r text-darkgrey">
                         {{-- Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ... --}}
-                        {{Str::of($major->description)->words(40, ' . . .')}}
+                        {{Str::of($major->description)->words(20, ' . . .')}}
                     </div>
                     <div class="cardFooter">
                     <button type="button" class="btn btn-primary text-12-sb" onclick="window.location.href='/major/{{$major->id}}'">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></button>
