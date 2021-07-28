@@ -100,7 +100,7 @@
                                     <div class="col-sm-4">
                                         <div class="cardPContainer shadow">
                                             <div class="cardPImgContainer">
-                                                <img src="{{asset('storage/assets/binus.jpg')}}" alt="image">
+                                                <img src="{{asset('storage/assets/images/uni/'.$uni->img)}}" alt="image">
                                             </div>
                                             <div class="cardTextContainer">
                                                 <div class="cardPTextTitle text-16-sb text-blue-dark">
