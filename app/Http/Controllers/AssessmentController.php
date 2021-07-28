@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\RiasecQuestion;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use lluminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Http;
@@ -152,6 +153,22 @@ class AssessmentController extends Controller
         $quizresult = $top1.$top2.$top3;
         // print($quizresult);
 
+        // print(Auth::user()->id);
+        DB::table('users')->where('id', '=', Auth::user()->id)->update([
+            'riasec' => $quizresult
+        ]);
+
+        // return redirect()->action('showResult');
+        return redirect()->action([AssessmentController::class, 'showResult']);
+    }
+
+    public function showResult(){
+        // $tops = array();
+
+        // return view('riasec-result', ['tops' => $tops]);
+
+        $quizresult= DB::table('users')->where('id', '=', Auth::user()->id)->select('riasec')->get();
+        // print($quizresult);
         // Append RIASEC code dari career
         $careers = DB::table('careers')->get();
         $riasec_code_career = array(); 
@@ -221,18 +238,9 @@ class AssessmentController extends Controller
         // Ambil dari db berdasarkan index 
         $career_recommendation = DB::table('careers')->join('majors', 'majors.id', '=', 'careers.major_id')->where('careers.id', "=", $recommend1+1)->orWhere('careers.id', '=', $recommend2+1)->orWhere('careers.id', '=', $recommend3+1)->get();
         // dd($career_recommendation); 
-        
-        // return redirect()->action('showResult', ['quizresult' => $quizresult, 'career_recommendation', $career_recommendation] );
-        // return redirect()->action([AssessmentController::class, 'showResult'], ['quizresult' => $quizresult, 'career_recommendation', $career_recommendation]);
+
         return view('career-assessment.career-assessment-result', ['quizresult' => $quizresult, 'career_recommendation' => $career_recommendation]); 
     }
-
-    // public function showResult(){
-    //     $tops = array();
-
-    //     return view('riasec-result', ['tops' => $tops]);
-
-    // }
 
     public function majorAssessment(){
 
