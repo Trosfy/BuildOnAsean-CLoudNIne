@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<title>Pendidikan Dokter Gigi</title>
+<title>{{$details->major_name}}</title>
 <style>
 
 </style>
