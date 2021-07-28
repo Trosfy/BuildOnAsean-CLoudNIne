@@ -17,6 +17,7 @@ class CreateUniversitiesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->longText('details'); 
+            $table->string('img');
         });
     }
 
