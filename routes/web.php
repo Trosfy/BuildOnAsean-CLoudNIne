@@ -42,10 +42,12 @@ Route::get('/career-assessment', 'AssessmentController@careerAssessment');
 
 // Careers
 Route::get('/careers', 'CareerController@showAll');
+Route::post('/careers', 'CareerController@filter');
 Route::get('/career/{id}', 'CareerController@show');
 
 //Majors
 Route::get('/majors', 'MajorController@showAll');
+Route::post('majors', 'MajorController@filter');
 Route::get('/major/{id}', 'MajorController@show');
 
 //Tes riasec

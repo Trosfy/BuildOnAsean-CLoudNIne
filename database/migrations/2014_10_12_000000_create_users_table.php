@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('riasec')->nullable();
             $table->longText('api_result')->nullable();
+            $table->bigInteger('budget')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
