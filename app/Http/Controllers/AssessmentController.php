@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\RiasecQuestion;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use lluminate\Support\Facades\Log;
@@ -142,20 +143,96 @@ class AssessmentController extends Controller
             $top3 = 'C'; 
         }
 
-        $tops = array();
-        array_push($tops, $top1, $top2, $top3); 
-        // dd($tops);
+        // $tops = array();
+        // array_push($tops, $top1, $top2, $top3); 
+        // // dd($tops); // Code in array, i.e., I, A, S
 
-        return view('riasec-result', ['tops' => $tops]);
-        // return redirect()->route('showResult', ['tops' => $tops] );
+
+        // // Append RIASEC code result jadi string
+        $quizresult = $top1.$top2.$top3;
+        // print($quizresult);
+
+        // Append RIASEC code dari career
+        $careers = DB::table('careers')->get();
+        $riasec_code_career = array(); 
+        foreach ($careers as $career) {
+            $riasec = ""; 
+            if($career->r == 1){
+                $riasec .= 'R';
+            } 
+            if ($career->i == 1){
+                $riasec .= 'I';
+            } 
+            if ($career->a == 1){
+                $riasec .= 'A';
+            } 
+            if ($career->s == 1){
+                $riasec .= 'S'; 
+            } 
+            if ($career->e == 1){
+                $riasec .= 'E'; 
+            } 
+            if ($career->c == 1){
+                $riasec .= 'C'; 
+            }
+            array_push($riasec_code_career, $riasec);   
+        }
+
+        // print_r($riasec_code_career); 
+
+        // Ngitung persamaan antara RIASEC code result & RIASEC code hasil
+        // e.g. result = IAS
+        // carreer = RIS
+        // $similarity_countnya jadi 2
+        $similarity_count = array();
+        for ($i = 0; $i < count($riasec_code_career) ; $i++) { 
+            $count = strlen($quizresult) - strlen(str_replace(str_split($riasec_code_career[$i]), '', $quizresult));
+            array_push($similarity_count, $count);
+        }
+        // print_r($similarity_count);
+
+        // Sort berdasarkan jumlah similarity count
+        // one, two, three itu similarity count
+        // recommend1, 2, 3 itu index careernya (tp start dri 0, di db start dri 1 jd ntar diakhir +1)
+        $one = $two = $three = PHP_INT_MIN; 
+        $recommend1 = $recommend2 = $recommend3 = ""; 
+        for($i = 0; $i < count($similarity_count) ; $i++){
+            if($similarity_count[$i] > $one){
+                $three = $two; 
+                $recommend3 = $recommend2; 
+                $two = $one;
+                $recommend2 = $recommend1; 
+                $one = $similarity_count[$i];
+                $recommend1 = $i;  
+            } else if ($similarity_count[$i] > $two){
+                $three = $two;
+                $recommend3 = $recommend2; 
+                $two = $similarity_count[$i];
+                $recommend2 = $i;
+            } else if($similarity_count[$i] > $three){
+                $three = $similarity_count[$i]; 
+                $recommend3 = $i; 
+            }
+        }
+        // print($recommend1);
+        // print($recommend2);
+        // print($recommend3);
+
+        // Ambil dari db berdasarkan index 
+        $career_recommendation = DB::table('careers')->join('majors', 'majors.id', '=', 'careers.major_id')->where('careers.id', "=", $recommend1+1)->orWhere('careers.id', '=', $recommend2+1)->orWhere('careers.id', '=', $recommend3+1)->get();
+        // dd($career_recommendation); 
+        
+        // return redirect()->action('showResult', ['quizresult' => $quizresult, 'career_recommendation', $career_recommendation] );
+        // return redirect()->action([AssessmentController::class, 'showResult'], ['quizresult' => $quizresult, 'career_recommendation', $career_recommendation]);
+        return view('career-assessment.career-assessment-result', ['quizresult' => $quizresult, 'career_recommendation' => $career_recommendation]); 
     }
 
-    public function showResult(){
-        $tops = array();
+    // public function showResult(){
+    //     $tops = array();
 
-        return view('riasec-result', ['tops' => $tops]);
+    //     return view('riasec-result', ['tops' => $tops]);
 
-    }
+    // }
 
     public function majorAssessment(){
 
