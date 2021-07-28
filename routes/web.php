@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PageController@landing');
 Route::get('/about', 'PageController@about');
 Route::get('/search', 'PageController@search');
-Route::get('/dashboard', 'PageController@dashboard');
+// Route::get('/dashboard', 'PageController@dashboard');
 
 Route::middleware(['auth'])->group(function(){
     // Major asssessment
@@ -59,9 +59,6 @@ Route::post('/get-riasec-data','AssessmentController@get_risec_result')->name('r
 Route::get('/showResult', 'AssessmentController@showResult')->name('showResult');
 Auth::routes();
 
-Route::get('/home', function(){
-    return redirect('/');
-});
 
 Route::get('/confirm', function(){
     return view('auth.passwords.confirm');
