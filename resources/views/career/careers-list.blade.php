@@ -2,12 +2,12 @@
 <title>Careers</title>
 
 @section('content')         
-<div class="container-100vh d-flex justify-content-center align-content-center align-items-center pHeader" style="background-image: url({{asset('storage/assets/bg/bg-51.svg')}});">
+<div class="container-100vh d-flex justify-content-center align-content-center align-items-center pHeader flex-column-r container-65vh-r pt-4-r" style="background-image: url({{asset('storage/assets/bg/bg-51.svg')}});">
     <div class="imgContaine" data-aos="zoom-in-right">
         <img src="{{asset('storage/assets/illustrations/career-1.svg')}}" alt="logo" class="imgLanding">
 
     </div>
-    <div class="textContainer"data-aos="zoom-in-left">
+    <div class="textContainer center-r"data-aos="zoom-in-left">
         <div>
             <span class="text-h2 text-white">
                 Careers 

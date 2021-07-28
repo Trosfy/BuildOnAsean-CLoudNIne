@@ -18,7 +18,7 @@
                 <span class="text-h2 text-blue-dark">Dentist</span>
             </div>
         </a>
-        <div class="d-flex container-50vh p3 bg-white">
+        <div class="d-flex container-50vh p3 bg-white flex-column-r">
             <div id="toc" class="careerContent text-16-r p2 sticky">
                 <div class="contentContainer bg-pink-dark text-white shadowPink"data-aos="zoom-in-up">
                     <span class="text-18-sb text-white">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex-grow-1 careerDesc"data-aos="fade-up">
+            <div class="flex-grow-1 careerDesc order-3-r"data-aos="fade-up">
                 <span class="text-h3 text-green-dark">
                     What Dentists do
                 </span> 
@@ -69,7 +69,7 @@
     </div>
 </div>
 <a id="desc">
-    <div class="container-100vh centerContainer p5 bgImg" style="background-image: url('{{asset('storage/assets/bg/bg-detail-jobdesc.png')}}');">
+    <div class="container-100vh centerContainer p5 bgImg container-auto-r " style="background-image: url('{{asset('storage/assets/bg/bg-detail-jobdesc.png')}}');">
         <div class="w-50" data-aos="fade-up">
             <span class="text-h3 text-green-dark">
                 On the job, a dentist would...
@@ -86,7 +86,7 @@
 </a>
 
 <a id="skills">
-    <div class="container-100vh centerContainer p5 bgImg" style="background-image: url('{{asset('storage/assets/bg/bg-detail-skills.png')}}');">
+    <div class="container-100vh centerContainer p5 bgImg container-auto-r" style="background-image: url('{{asset('storage/assets/bg/bg-detail-skills.png')}}');">
         <div class="w-50"data-aos="fade-up">
             <span class="text-h3 text-green-dark">
                 Skills
@@ -126,7 +126,7 @@
 </a>
 
 <a id="personality">
-    <div class="container-100vh centerContainer p5 bgImg" style="background-image: url('{{asset('storage/assets/bg/bg-detail-personality.png')}}');">        
+    <div class="container-100vh centerContainer p5 bgImg container-auto-r" style="background-image: url('{{asset('storage/assets/bg/bg-detail-personality.png')}}');">        
         <div class="w-50"data-aos="fade-up">
             <span class="text-h3 text-green-dark">
                 Personality

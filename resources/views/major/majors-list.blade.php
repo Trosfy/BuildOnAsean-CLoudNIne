@@ -2,12 +2,12 @@
 <title>Majors</title>
     
 @section('content')         
-<div class="container-100vh d-flex justify-content-center align-content-center align-items-center pHeader" style="background-image: url({{asset('storage/assets/bg/bg-41.svg')}});">
+<div class="container-100vh d-flex justify-content-center align-content-center align-items-center pHeader flex-column-r container-65vh-r pt-4-r" style="background-image: url({{asset('storage/assets/bg/bg-41.svg')}});">
     <div class="imgContainer"data-aos="zoom-in-right">
         <img src="{{asset('storage/assets/illustrations/major-11.svg')}}" alt="logo" class="imgLanding">
 
     </div>
-    <div class="textContainer"data-aos="zoom-in-left">
+    <div class="textContainer center-r"data-aos="zoom-in-left ">
         <div>
             <span class="text-h2 text-blue-dark">
                 Majors 
@@ -70,7 +70,7 @@
             <div class="cardImgContainer">
                 <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
             </div>
-            <div class="cardTextContainer">
+            <div class="cardTextContainer w-100 w-100">
                 <div class="cardTitle">
                     <span class="text-14-r text-blue-dark">
                         BINUS University
@@ -98,7 +98,7 @@
             <div class="cardImgContainer">
                 <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
             </div>
-            <div class="cardTextContainer">
+            <div class="cardTextContainer w-100 w-100">
                 <div class="cardTitle">
                     <span class="text-14-r text-blue-dark">
                         BINUS University
@@ -126,7 +126,7 @@
             <div class="cardImgContainer">
                 <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
             </div>
-            <div class="cardTextContainer">
+            <div class="cardTextContainer w-100 w-100">
                 <div class="cardTitle">
                     <span class="text-14-r text-blue-dark">
                         BINUS University
@@ -154,7 +154,7 @@
             <div class="cardImgContainer">
                 <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
             </div>
-            <div class="cardTextContainer">
+            <div class="cardTextContainer w-100 w-100">
                 <div class="cardTitle">
                     <span class="text-14-r text-blue-dark">
                         BINUS University
@@ -182,7 +182,7 @@
             <div class="cardImgContainer">
                 <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
             </div>
-            <div class="cardTextContainer">
+            <div class="cardTextContainer w-100 w-100">
                 <div class="cardTitle">
                     <span class="text-14-r text-blue-dark">
                         BINUS University

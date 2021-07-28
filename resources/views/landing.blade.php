@@ -5,12 +5,12 @@
 </style>
 
 @section('content')
-<div class="container-100vh d-flex justify-content-center align-content-center align-items-center pHeader" style="background-image: url({{asset('storage/assets/bg/bg-11.png')}});">
+<div class="container-100vh d-flex justify-content-center align-content-center align-items-center pHeader flex-column-r " style="background-image: url({{asset('storage/assets/bg/bg-11.png')}});">
     <div class="imgContainer mt-4">
         <img src="{{asset('storage/assets/illustrations/home-1.svg')}}" alt="logo" class="imgLanding" data-aos="fade-down">
 
     </div>
-    <div class="textContainer mt-4"data-aos="fade-down">
+    <div class="textContainer center-r mt-4"data-aos="fade-down">
         
         <div>
             <span class="text-h1 text-green-light">
@@ -33,10 +33,10 @@
 
 <a id="features">
 
-<div class="container-100vh bg-blue-dark bgImg d-flex justify-content-center align-items-center"style="background-image: url({{asset('storage/assets/bg/bg-12.png')}});"  >
-    <div class="d-flex flex-column justify-content-center align-items-center p5 w-75  bg-green-light border-50 shadowGreen" style="min-height: 75vh;">
+<div class="container-100vh bg-blue-dark bgImg d-flex justify-content-center align-items-center container-auto-r"style="background-image: url({{asset('storage/assets/bg/bg-12.png')}});"  >
+    <div class="d-flex flex-column justify-content-center align-items-center p5 w-75  bg-green-light border-50 shadowGreen min-h-75">
         <span class="text-h3 text-blue-dark"data-aos="fade-down">Our Features</span>
-        <div class="d-flex align-items-center justify-content-around w-100 mt-4">
+        <div class="d-flex align-items-center justify-content-around w-100 mt-4  flex-column-r">
             <div class="kotak" data-aos="zoom-in-down">
                 <img src="{{asset('storage/assets/illustrations/home-11.svg')}}" alt="" class="imgSquareMini mt-3 mb-3">
                 <br>
@@ -64,10 +64,10 @@
 
 </a>
 
-<div class="container-100vh d-flex justify-content-center align-items-center bgImg" style="background-image: url({{asset('storage/assets/bg/bg-131.svg')}});">
+<div class="container-100vh d-flex justify-content-center align-items-center bgImg container-55vh-r " style="background-image: url({{asset('storage/assets/bg/bg-131.svg')}});">
     <div class="d-flex w-75 justify-content-center align-items-center" data-aos="zoom-in-down">
         <div class="w-50 d-flex justify-content-between flex-column">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between flex-column-reverse-r align-items-end-r">
                 <div class="flex-grow-1 text-right p2">
                     <span class="text-16-sb text-blue-dark">Create your profile</span>
                     <br>
@@ -84,13 +84,13 @@
     </div>
 </div>
 
-<div class="container-100vh d-flex justify-content-center align-items-center bgImg" style="background-image: url({{asset('storage/assets/bg/bg-132.svg')}});">
+<div class="container-100vh d-flex justify-content-center align-items-center bgImg container-55vh-r " style="background-image: url({{asset('storage/assets/bg/bg-132.svg')}});">
     <div class="d-flex w-75 justify-content-center align-items-center"data-aos="zoom-in-down">
         <div>
             <img src="{{asset('storage/assets/illustrations/home-22.svg')}}" alt="image" class="imgSquareBig mr-3">
         </div>
-        <div class="w-50 d-flex justify-content-between flex-column">
-            <div class="d-flex justify-content-between">
+        <div class="w-50 d-flex justify-content-between flex-column ">
+            <div class="d-flex justify-content-between flex-column-r">
                 <div class="p2">
                     <img src="{{asset('storage/assets/step-2-active.svg')}}" alt="">
                 </div>
@@ -107,10 +107,10 @@
 </div>
 
 
-<div class="container-100vh d-flex justify-content-center align-items-center  bgImg" style="background-image: url({{asset('storage/assets/bg/bg-133.svg')}});">
+<div class="container-100vh d-flex justify-content-center align-items-center  bgImg container-55vh-r " style="background-image: url({{asset('storage/assets/bg/bg-133.svg')}});">
     <div class="d-flex w-75 justify-content-center align-items-center"data-aos="zoom-in-down">
         <div class="w-50 d-flex justify-content-between flex-column">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between flex-column-reverse-r align-items-end-r">
                 <div class="flex-grow-1 text-right p2">
                     <span class="text-16-sb text-blue-dark">Get recommendations</span>
                     <br>
@@ -127,9 +127,9 @@
     </div>
 </div>
 
-<div class="aa container-100vh d-flex justify-content-center align-items-center bgImg" style="background-image: url({{asset('storage/assets/bg/bg-14.svg')}});">
-    <div class="d-flex w-75 justify-content-around align-items-center">
-        <div class="border-50 bg-blue-dark cardd d-flex justify-content-around align-items-center flex-column p5" style="min-height: 50vh;" data-aos="zoom-in-up">
+<div class="aa container-100vh d-flex justify-content-center align-items-center bgImg container-auto-r" style="background-image: url({{asset('storage/assets/bg/bg-14.svg')}});">
+    <div class="d-flex w-75 justify-content-around align-items-center flex-column-r">
+        <div class="border-50 bg-blue-dark cardd d-flex justify-content-around align-items-center flex-column p5 min-h-50  mb-2-r w-75-r" data-aos="zoom-in-up">
             <img src="{{asset('storage/assets/illustrations/home-31.svg')}}" alt="image" style="object-fit: contain;" class="imgSquare">
 
             <div >
@@ -139,7 +139,7 @@
                 <a href="/major-assessment" class="btn btn-primary mt-3">Take test</a>
             </div>
         </div>
-        <div class="border-50 bg-blue-dark cardd d-flex justify-content-around align-items-center flex-column p5" style="min-height: 50vh;"data-aos="zoom-in-up">
+        <div class="border-50 bg-blue-dark cardd d-flex justify-content-around align-items-center flex-column p5 min-h-50 mb-2-r  w-75-r" data-aos="zoom-in-up">
             <img src="{{asset('storage/assets/illustrations/home-32.svg')}}" alt="image" style="object-fit: contain;" class="imgSquare">
 
             <div >

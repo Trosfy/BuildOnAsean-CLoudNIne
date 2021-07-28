@@ -52,7 +52,8 @@ Route::get('/test', function () {
 
 Route::get('/riasec-assessment', 'AssessmentController@view_riasec_assessment_page');
 
-Route::post('/get-riasec-data','AssessmentController@get_risec_result');
+Route::post('/get-riasec-data','AssessmentController@get_risec_result')->name('riasec-post');
+Route::get('/showResult', 'AssessmentController@showResult')->name('showResult');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

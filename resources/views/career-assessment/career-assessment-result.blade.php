@@ -12,7 +12,7 @@
     <div class="cardImgContainer">
         <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
     </div>
-    <div class="cardTextContainer">
+    <div class="cardTextContainer w-100">
         <div class="cardTitle">
             <span class="text-h4 text-blue-dark mt-4">
                 Dentist
@@ -36,7 +36,7 @@
     <div class="cardImgContainer">
         <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
     </div>
-    <div class="cardTextContainer">
+    <div class="cardTextContainer w-100">
         <div class="cardTitle">
             <span class="text-h4 text-blue-dark mt-4">
                 Dentist
@@ -60,7 +60,7 @@
     <div class="cardImgContainer">
         <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
     </div>
-    <div class="cardTextContainer">
+    <div class="cardTextContainer w-100">
         <div class="cardTitle">
             <span class="text-h4 text-blue-dark mt-4">
                 Dentist

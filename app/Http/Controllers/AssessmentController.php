@@ -25,7 +25,7 @@ class AssessmentController extends Controller
     public function view_riasec_assessment_page(){
         $questions = RiasecQuestion::paginate(5);
 
-        return view('career-paginate', ['questions' => $questions]); 
+        return view('riasec-assessment', ['questions' => $questions]); 
         
     }
 
@@ -37,8 +37,12 @@ class AssessmentController extends Controller
         //     }
         //     return view('riasec-assessment', ['questions' => $questions]);
         // }
+        $x = $request->all();
+        // dd($request->all());
+        // $checked = $request->input('checked');
 
-        $checked = $request->input('checked');
+        
+
         $result = array(); 
         $countR = 0;
         $countI = 0; 
@@ -48,7 +52,7 @@ class AssessmentController extends Controller
         $countC = 0; 
         $first = $second = $third = PHP_INT_MIN; 
         $top1 = $top2 = $top3 = PHP_INT_MIN; 
-        foreach($checked as $check){
+        foreach($x as $check){
             if($check == 'R'){
                 $countR += 1; 
             } else if ($check == 'I'){
@@ -140,7 +144,17 @@ class AssessmentController extends Controller
 
         $tops = array();
         array_push($tops, $top1, $top2, $top3); 
+        // dd($tops);
+
         return view('riasec-result', ['tops' => $tops]);
+        // return redirect()->route('showResult', ['tops' => $tops] );
+    }
+
+    public function showResult(){
+        $tops = array();
+
+        return view('riasec-result', ['tops' => $tops]);
+
     }
 
     public function majorAssessment(){
