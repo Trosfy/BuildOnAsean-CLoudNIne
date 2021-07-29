@@ -44,10 +44,7 @@ Route::middleware(['auth'])->group(function(){
 Route::get('/major-assessment', 'AssessmentController@majorAssessment');
 
 // Career asssessment
-Route::group(['middleware'=> 'has_taken_major'],function(){
-    Route::get('/career-assessment', 'AssessmentController@careerAssessment');
-});
-
+Route::get('/career-assessment', 'AssessmentController@careerAssessment');
 
 // Careers
 Route::get('/careers', 'CareerController@showAll');
