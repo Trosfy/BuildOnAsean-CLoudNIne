@@ -6,7 +6,7 @@
 <div class="container-50vh d-flex  align-items-end bgImg"  style="background-image: url({{asset('storage/assets/bg/bg-user.png')}});">
     <div class="mb-5 ml-5 d-flex  align-items-center justify-content-around ">
         <img src="{{asset('storage/assets/illustrations/user.svg')}}" alt="" class="imgSquareM">
-        <span class="text-h2 text-blue-dark ml-3">Hi, User!</span>
+        <span class="text-h2 text-blue-dark ml-3">Hi, {{Auth::user()->first_name}}!</span>
     </div>
     
 </div>
@@ -58,7 +58,7 @@
     </div>
 @endif
 
-@if (!is_null($career_recommendation))
+@if (!is_null($career_recommendation) and !is_null($major_recommendation))
     <div class="container-100vh d-flex p2 justify-content-center">
         <div class="right p2">
             <div>
@@ -94,31 +94,34 @@
     </div>
 @endif
 
+
 @if(is_null($major_recommendation))
-    <div class="border-50 bg-blue-dark cardd d-flex justify-content-around align-items-center flex-column p5 min-h-50  mb-2-r w-75-r" data-aos="zoom-in-up">
-        <img src="{{asset('storage/assets/illustrations/home-31.svg')}}" alt="image" style="object-fit: contain;" class="imgSquare">
+    <div class="aa container-100vh d-flex justify-content-center align-items-center bgImg container-auto-r" style="background-image: url({{asset('storage/assets/bg/bg-14.svg')}});">
+        <div class="border-50 bg-blue-dark cardd d-flex justify-content-around align-items-center flex-column p5 min-h-50  mb-2-r w-75-r" data-aos="zoom-in-up">
+            <img src="{{asset('storage/assets/illustrations/home-31.svg')}}" alt="image" style="object-fit: contain;" class="imgSquare">
 
-        <div >
-            <span class="text-h4 text-pink-light">Major Assessment</span>
-        </div>
-        <div>
-            <a href="/major-assessment" class="btn btn-primary mt-3">Take test</a>
-        </div>
-    </div>
-@elseif (is_null($career_recommendation))
-    <div class="border-50 bg-blue-dark cardd d-flex justify-content-around align-items-center flex-column p5 min-h-50 mb-2-r  w-75-r" data-aos="zoom-in-up">
-        <img src="{{asset('storage/assets/illustrations/home-32.svg')}}" alt="image" style="object-fit: contain;" class="imgSquare">
-
-        <div >
-            <span class="text-h4 text-pink-light">Career Assessment</span>
-        </div>
-        <div>
-            <a href="/career-assessment" class="btn btn-primary mt-3">Take test</a>
+            <div >
+                <span class="text-h4 text-pink-light">Major Assessment</span>
+            </div>
+            <div>
+                <a href="/major-assessment" class="btn btn-primary mt-3">Take test</a>
+            </div>
         </div>
     </div>
-</div>
-@endif
-
-
-
+    @elseif (is_null($career_recommendation))
+        @if(!is_null($major_recommendation))
+        <div class="aa container-100vh d-flex justify-content-center align-items-center bgImg container-auto-r" style="background-image: url({{asset('storage/assets/bg/bg-14.svg')}});">
+            <div class="border-50 bg-blue-dark cardd d-flex justify-content-around align-items-center flex-column p5 min-h-50 mb-2-r  w-75-r" data-aos="zoom-in-up">
+                <img src="{{asset('storage/assets/illustrations/home-32.svg')}}" alt="image" style="object-fit: contain;" class="imgSquare">
+        
+                <div >
+                    <span class="text-h4 text-pink-light">Career Assessment</span>
+                </div>
+                <div>
+                    <a href="/career-assessment" class="btn btn-primary mt-3">Take test</a>
+                </div>
+            </div>
+        </div>
+        @endif
+    @endif
 @endsection
