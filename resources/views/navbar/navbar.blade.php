@@ -43,8 +43,8 @@
                             {{ Auth::user()->last_name }},&nbsp;{{ Auth::user()->first_name}}
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
+                        <div class="dropdown-menu dropdown-menu-right transparent no-border" aria-labelledby="navbarDropdown">
+                            <a class="btn btn-primary dropdown-item text-center" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}

@@ -51,7 +51,7 @@ class CareerController extends Controller
 
 
         $majors = DB::table('majors')->orderBy('name')->get();
-        $careers = DB::table('careers')->join('majors', 'careers.major_id', '=', 'majors.id')->select('careers.id','jobtitle', 'majors.name AS major_name', 'overview')->orderBy('jobtitle', 'asc')->paginate(5);
+        $careers = DB::table('careers')->join('majors', 'careers.major_id', '=', 'majors.id')->select('careers.id','jobtitle', 'majors.name AS major_name', 'major_id','overview', 'careers.img')->orderBy('jobtitle', 'asc')->paginate(5);
         return view('career.careers-list', compact('careers', 'majors'));
     }
 

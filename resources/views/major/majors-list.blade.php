@@ -71,19 +71,19 @@
         @foreach ($majors as $major)
             <div class="cardContainer shadow"data-aos="zoom-in-up">
                 <div class="cardImgContainer">
-                    <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
+                    <img src="{{asset('storage/assets/images/majors/'.$major->img)}}" alt="image">
                 </div>
-                <div class="cardTextContainer w-100 w-100">
+                <div class="cardTextContainer d-flex flex-column justify-content-center w-100">
                     <div class="cardTitle">
                         <span class="text-14-r text-blue-dark">
-                            {{-- BINUS University --}}
                             {{$major->uni_name}}
                         </span>
                         <br>
+                        <a href="/major/{{$major->id}}" class="text-decoration-none text-blue-dark">
                         <span class="text-h4 text-blue-dark">
-                            {{-- Pendidikan Dokter Gigi --}}
                             {{$major->major_name}}
                         </span>
+                    </a>
                     </div>
                     <div class="cardType">
                         @if($major->stream_science == 1)
@@ -94,14 +94,12 @@
                         @endif
                     </div>
                     <div class="cardDesc text-14-r text-darkgrey">
-                        {{-- Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ... --}}
-                        {{Str::of($major->description)->words(40, ' . . .')}}
+                        {{Str::of($major->description)->words(20, ' . . .')}}
                     </div>
                     <div class="cardFooter">
                     <button type="button" class="btn btn-primary text-12-sb" onclick="window.location.href='/major/{{$major->id}}'">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></button>
                         <span class="cardTuition text-h4 text-blue-dark">
-                            {{-- Rp 100.000.000 --}}
-                            {{$major->budget}}
+                            Rp {{$major->budget}}
                         </span>
                     </div>
                 </div>

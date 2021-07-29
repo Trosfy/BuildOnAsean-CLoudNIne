@@ -746,7 +746,9 @@ input#birthday{
     border-radius: 20px;
     display: flex;
     width: 60vw;
-    height: 300px;
+    min-height: 300px;
+    height: auto;
+    max-height: 500px;
     background-color: white;
     margin: 2rem 0rem !important; 
 }
@@ -754,14 +756,15 @@ input#birthday{
 .cardImgContainer{
     min-width: 254px;
     min-height: 300px;
-    height: 300px;
+    height: auto;
 }
 
 .cardImgContainer img{
     min-width: 254px !important;
     max-width: 254px !important;
     min-height: 300px;
-    max-height: 300px;
+    max-height: 500px;
+    height: 100% !important;
     border-radius: 20px 0 0 20px;
     object-fit: cover;
 }
@@ -785,7 +788,9 @@ input#birthday{
     margin-bottom: 1.5rem !important;
 }
 /*  */
-
+.no-border{
+    border: none !important;
+}
 /* career assessment */
 .headerCareerTest{
     width: 50vw;
