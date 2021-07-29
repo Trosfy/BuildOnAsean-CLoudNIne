@@ -63,12 +63,12 @@ class CareerController extends Controller
         {
             if($request->rType == 'all')
             {
-                $careers = DB::table('careers')->join('majors', 'careers.major_id', '=', 'majors.id')->select('careers.id','jobtitle', 'majors.name AS major_name', 'overview')->orderBy('jobtitle', $request->sort)->paginate(5);
+                $careers = DB::table('careers')->join('majors', 'careers.major_id', '=', 'majors.id')->select('major_id','careers.id','jobtitle', 'majors.name AS major_name', 'overview', 'careers.img')->orderBy('jobtitle', $request->sort)->paginate(5);
                 // $careers = Career::orderBy('jobtitle', $request->sort)->get();
                 
             }else
             {
-                $careers = DB::table('careers')->join('majors', 'careers.major_id', '=', 'majors.id')->select('careers.id','jobtitle', 'majors.name AS major_name', 'overview')->where('majors.name', '=', $request->rType)->orderBy('jobtitle', $request->sort)->paginate(5);
+                $careers = DB::table('careers')->join('majors', 'careers.major_id', '=', 'majors.id')->select('major_id','careers.id','jobtitle', 'majors.name AS major_name', 'overview', 'careers.img')->where('majors.name', '=', $request->rType)->orderBy('jobtitle', $request->sort)->paginate(5);
                 // $majors = Major::where('name', '=', $request->rType)->get();
                 // $careers = Career::find(1)->major();
                 // $careers = Career::with(['major' => function($query) use ( $request ){
