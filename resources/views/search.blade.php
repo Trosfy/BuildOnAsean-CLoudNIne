@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<title>Search Results</title>
 @section('content')
 <div class="container-50vh bgImg d-flex flex-column justify-content-center align-items-center" style="background-image: url({{asset('storage/assets/bg/bg-search.png')}})">
     <span class="text-h3 text-pink-dark text-center">Search results</span>
