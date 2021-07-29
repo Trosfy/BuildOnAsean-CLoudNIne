@@ -11,7 +11,7 @@ class Major extends Model
     protected $fillable = ['id','name','stream-science','stream-social','description','img'];
     public function uni_majors()
     {
-        return $this->hasMany('App\Uni_Major');
+        return $this->hasMany('App\Uni_Major', 'major_id','id');
     }
     public function careers()
     {

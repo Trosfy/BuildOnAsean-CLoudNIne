@@ -17,8 +17,8 @@
                 <li><a href="/majors" class="nav-link px-2 text-green-dark-hover">Majors</a></li>
                 <li><a href="/careers" class="nav-link px-2 text-green-dark-hover">Careers</a></li>
                 {{-- <li><a href="/about" class="nav-link px-2 text-green-dark-hover">About</a></li> --}}
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 searchBar" action="/search" method="">
-                  <input class="form-control searchInput text-12-sb" type="text" placeholder="Search" >
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 searchBar" action="/search" method="GET">
+                  <input class="form-control searchInput text-12-sb" type="text" placeholder="Search" value="{{Request::input('query')}}" name="query">
                   <button class="my-2 my-sm-0 searchLogoContainer" type="submit">
                       <img src="{{asset('storage/assets/icons/search.svg')}}" alt="logo" class="logo filter-white">
                   </button>
