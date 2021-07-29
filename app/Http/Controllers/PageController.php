@@ -26,8 +26,9 @@ class PageController extends Controller
             } else {
                 if(!is_null($user->riasec)){
                     $riasec_code = DB::table('users')->select('riasec')->where('id', '=', Auth::user()->id)->first(); 
+                    // dd($riasec_code); 
     
-                    $riasec = $riasec_code->riasec; 
+                    $needle = $riasec_code->riasec; 
     
                     $careers = DB::table('careers')->get();
                     $riasec_code_career = array(); 
@@ -62,7 +63,7 @@ class PageController extends Controller
                     // $similarity_countnya jadi 2
                     $similarity_count = array();
                     for ($i = 0; $i < count($riasec_code_career) ; $i++) { 
-                        $count = strlen($riasec) - strlen(str_replace(str_split($riasec_code_career[$i]), '', $riasec));
+                        $count = strlen($needle) - strlen(str_replace(str_split($riasec_code_career[$i]), '', $needle));
                         array_push($similarity_count, $count);
                     }
                     // print_r($similarity_count);
