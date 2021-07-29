@@ -16,6 +16,7 @@ class CreateMajorsTable extends Migration
         Schema::create('majors', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('trans-name')->nullable();
             $table->boolean('stream-science');
             $table->boolean('stream-social');
             $table->longText('description')->nullable();
