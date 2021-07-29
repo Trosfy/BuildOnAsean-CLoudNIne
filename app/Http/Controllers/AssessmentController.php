@@ -354,6 +354,7 @@ class AssessmentController extends Controller
 
         $user->budget = $budget;
         $user->api_result = $majors;
+        $user->jurusan = $jurusan; 
         $user->save();
 
         $major_result = explode(',', $majors);
