@@ -10,175 +10,115 @@
     </div>
     
 </div>
-<div class="container-100vh d-flex p2 justify-content-center">
-    <div class="right p2">
-        <div>
-            <span class="text-h4 text-blue-dark">Recommended Major</span>
-        </div>
-        <div class="cardContainer shadow">
-            <div class="cardImgContainer">
-                <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
+@if(!is_null($major_recommendation))
+    <div class="container-100vh d-flex p2 justify-content-center">
+        <div class="right p2">
+            <div>
+                <span class="text-h4 text-blue-dark">Recommended Major</span>
             </div>
-            <div class="cardTextContainer">
-                <div class="cardTitle">
-                    <span class="text-14-r text-blue-dark">
-                        BINUS University
-                    </span>
-                    <br>
-                    <span class="text-h4 text-blue-dark">
-                        Pendidikan Dokter Gigi
-                    </span>
+            @foreach ($major_recommendation as $major)
+                <div class="cardContainer shadow">
+                    <div class="cardImgContainer">
+                        {{-- {{$major->img}} --}}
+                        <img src="{{asset('storage/assets/images/majors/'.$major->img)}}" alt="image">
+                    </div>
+                    <div class="cardTextContainer">
+                        <div class="cardTitle">
+                            <span class="text-14-r text-blue-dark">
+                                {{$major->university_name}}
+                            </span>
+                            <br>
+                            <span class="text-h4 text-blue-dark">
+                                {{$major->name}}
+                            </span>
+                        </div>
+                        <div class="cardType">
+                            @if($major->stream_science == 1)
+                                <a class="type text-12-sb">IPA</a>
+                            @endif
+                            @if($major->stream_social == 1)
+                                <a class="type text-12-sb">IPS</a>
+                            @endif
+                        </div>
+                        <div class="cardDesc text-14-r text-darkgrey">
+                            {{-- Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ... --}}
+                            {{Str::of($major->description)->words(20, ' . . .')}}
+                        </div>
+                        <div class="cardFooter">
+                            <a href="/major/{{$major->id}}" class="text-decoration-none text-white"><button class="btn btn-primary text-12-sb">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></button></a>
+                            <span class="cardTuition text-h4 text-blue-dark">
+                                {{-- Rp 100.000.000 --}}
+                                {{$major->budget}}
+                            </span>
+                        </div>
+                    </div>
                 </div>
-                <div class="cardType">
-                    <a class="type text-12-sb">IPA</a>
-                </div>
-                <div class="cardDesc text-14-r text-darkgrey">
-                    Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ...
-                </div>
-                <div class="cardFooter">
-                    <a href="/major/1" class="text-decoration-none text-white"><button class="btn btn-primary text-12-sb">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></button></a>
-                    <span class="cardTuition text-h4 text-blue-dark">
-                        Rp 100.000.000
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="cardContainer shadow">
-            <div class="cardImgContainer">
-                <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
-            </div>
-            <div class="cardTextContainer">
-                <div class="cardTitle">
-                    <span class="text-14-r text-blue-dark">
-                        BINUS University
-                    </span>
-                    <br>
-                    <span class="text-h4 text-blue-dark">
-                        Pendidikan Dokter Gigi
-                    </span>
-                </div>
-                <div class="cardType">
-                    <a class="type text-12-sb">IPA</a>
-                </div>
-                <div class="cardDesc text-14-r text-darkgrey">
-                    Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ...
-                </div>
-                <div class="cardFooter">
-                    <a href="/major/1" class="text-decoration-none text-white"><button class="btn btn-primary text-12-sb">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></button></a>
-                    <span class="cardTuition text-h4 text-blue-dark">
-                        Rp 100.000.000
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="cardContainer shadow">
-            <div class="cardImgContainer">
-                <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
-            </div>
-            <div class="cardTextContainer">
-                <div class="cardTitle">
-                    <span class="text-14-r text-blue-dark">
-                        BINUS University
-                    </span>
-                    <br>
-                    <span class="text-h4 text-blue-dark">
-                        Pendidikan Dokter Gigi
-                    </span>
-                </div>
-                <div class="cardType">
-                    <a class="type text-12-sb">IPA</a>
-                </div>
-                <div class="cardDesc text-14-r text-darkgrey">
-                    Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ...
-                </div>
-                <div class="cardFooter">
-                    <a href="/major/1" class="text-decoration-none text-white"><button class="btn btn-primary text-12-sb">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></button></a>
-                    <span class="cardTuition text-h4 text-blue-dark">
-                        Rp 100.000.000
-                    </span>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
-</div>
+@endif
 
-<div class="container-100vh d-flex p2 justify-content-center">
-    <div class="right p2">
+@if (!is_null($career_recommendation))
+    <div class="container-100vh d-flex p2 justify-content-center">
+        <div class="right p2">
+            <div>
+                <span class="text-h4 text-blue-dark">Recommended Careers</span>
+            </div>
+            @foreach ($career_recommendation as $career)
+            <div class="cardContainer shadow">
+                <div class="cardImgContainer">
+                    <img src="{{asset('storage/assets/images/careers/'.$career->career_img)}}" alt="image">
+                </div>
+                <div class="cardTextContainer">
+                    <div class="cardTitle">
+                        <span class="text-h4 text-blue-dark mt-4">
+                            {{$career->jobtitle}}
+                        </span>
+                    </div>
+                    <div class="cardType">
+                        <a class="type text-12-sb">{{$career->name}}</a>
+                    </div>
+                    <div class="cardDesc text-14-r text-darkgrey">
+                        {{Str::of($career->overview)->words(20, ' . . .')}}
+                    </div>
+                    <div class="cardFooter">
+                        <button class="btn btn-primary btnRightt text-12-sb"><a href="/career/{{$career->career_id}}" class="text-decoration-none text-white">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></a></button>
+                        {{-- <span class="cardTuition text-h4">
+                            Rp 100.000.000
+                        </span> --}}
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+@endif
+
+@if(is_null($major_recommendation))
+    <div class="border-50 bg-blue-dark cardd d-flex justify-content-around align-items-center flex-column p5 min-h-50  mb-2-r w-75-r" data-aos="zoom-in-up">
+        <img src="{{asset('storage/assets/illustrations/home-31.svg')}}" alt="image" style="object-fit: contain;" class="imgSquare">
+
+        <div >
+            <span class="text-h4 text-pink-light">Major Assessment</span>
+        </div>
         <div>
-            <span class="text-h4 text-blue-dark">Recommended Careers</span>
+            <a href="/major-assessment" class="btn btn-primary mt-3">Take test</a>
         </div>
-        <div class="cardContainer shadow">
-            <div class="cardImgContainer">
-                <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
-            </div>
-            <div class="cardTextContainer">
-                <div class="cardTitle">
-                    <span class="text-h4 text-blue-dark mt-4">
-                        Dentist
-                    </span>
-                </div>
-                <div class="cardType">
-                    <a class="type text-12-sb">Pendidikan Dokter Gigi</a>
-                </div>
-                <div class="cardDesc text-14-r text-darkgrey">
-                    Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ...
-                </div>
-                <div class="cardFooter">
-                    <button class="btn btn-primary btnRightt text-12-sb"><a href="/career/1" class="text-decoration-none text-white">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></a></button>
-                    {{-- <span class="cardTuition text-h4">
-                        Rp 100.000.000
-                    </span> --}}
-                </div>
-            </div>
+    </div>
+@elseif (is_null($career_recommendation))
+    <div class="border-50 bg-blue-dark cardd d-flex justify-content-around align-items-center flex-column p5 min-h-50 mb-2-r  w-75-r" data-aos="zoom-in-up">
+        <img src="{{asset('storage/assets/illustrations/home-32.svg')}}" alt="image" style="object-fit: contain;" class="imgSquare">
+
+        <div >
+            <span class="text-h4 text-pink-light">Career Assessment</span>
         </div>
-        <div class="cardContainer shadow">
-            <div class="cardImgContainer">
-                <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
-            </div>
-            <div class="cardTextContainer">
-                <div class="cardTitle">
-                    <span class="text-h4 text-blue-dark mt-4">
-                        Dentist
-                    </span>
-                </div>
-                <div class="cardType">
-                    <a class="type text-12-sb">Pendidikan Dokter Gigi</a>
-                </div>
-                <div class="cardDesc text-14-r text-darkgrey">
-                    Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ...
-                </div>
-                <div class="cardFooter">
-                    <button class="btn btn-primary btnRightt text-12-sb"><a href="/career/1" class="text-decoration-none text-white">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></a></button>
-                    {{-- <span class="cardTuition text-h4">
-                        Rp 100.000.000
-                    </span> --}}
-                </div>
-            </div>
-        </div>
-        <div class="cardContainer shadow">
-            <div class="cardImgContainer">
-                <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
-            </div>
-            <div class="cardTextContainer">
-                <div class="cardTitle">
-                    <span class="text-h4 text-blue-dark mt-4">
-                        Dentist
-                    </span>
-                </div>
-                <div class="cardType">
-                    <a class="type text-12-sb">Pendidikan Dokter Gigi</a>
-                </div>
-                <div class="cardDesc text-14-r text-darkgrey">
-                    Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ...
-                </div>
-                <div class="cardFooter">
-                    <button class="btn btn-primary btnRightt text-12-sb"><a href="/career/1" class="text-decoration-none text-white">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></a></button>
-                    {{-- <span class="cardTuition text-h4">
-                        Rp 100.000.000
-                    </span> --}}
-                </div>
-            </div>
+        <div>
+            <a href="/career-assessment" class="btn btn-primary mt-3">Take test</a>
         </div>
     </div>
 </div>
+@endif
+
+
+
 @endsection
