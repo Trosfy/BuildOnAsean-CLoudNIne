@@ -236,7 +236,7 @@ class AssessmentController extends Controller
         // print($recommend3);
 
         // Ambil dari db berdasarkan index 
-        $career_recommendation = DB::table('careers')->join('majors', 'majors.id', '=', 'careers.major_id')->where('careers.id', "=", $recommend1+1)->orWhere('careers.id', '=', $recommend2+1)->orWhere('careers.id', '=', $recommend3+1)->select('*','careers.id as career_id', 'careers.img as career_img')->get();
+        $career_recommendation = DB::table('careers')->join('majors', 'majors.id', '=', 'careers.major_id')->where('careers.id', "=", $recommend1+1)->orWhere('careers.id', '=', $recommend2+1)->orWhere('careers.id', '=', $recommend3+1)->select('*','careers.id as career_id', 'careers.img as career_img','majors.trans-name AS trans_name')->get();
         // dd($career_recommendation); 
 
         return view('career-assessment.career-assessment-result', ['quizresult' => $quizresult, 'career_recommendation' => $career_recommendation]); 
@@ -361,9 +361,9 @@ class AssessmentController extends Controller
 
         // Filter sesuai budget dan jurusan 
         if($jurusan == 'IPA'){
-            $data = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS university_name' , 'majors.name', 'uni_majors.budget')->where('budget', '<=', $budget)->where('stream-science', '=', 1)->orderBy('budget')->get();
+            $data = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS university_name' , 'majors.name', 'majors.trans-name AS trans_name','uni_majors.budget','majors.id','majors.stream-social as stream_social','majors.stream-science as stream_science')->where('budget', '<=', $budget)->where('stream-science', '=', 1)->orderBy('budget')->get();
         } else {
-            $data = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS university_name' , 'majors.name', 'uni_majors.budget')->where('budget', '<=', $budget)->where('stream-social', '=', 1)->orderBy('budget')->get();
+            $data = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS university_name' , 'majors.name', 'majors.trans-name AS trans_name','uni_majors.budget','majors.id','majors.stream-social as stream_social','majors.stream-science as stream_science')->where('budget', '<=', $budget)->where('stream-social', '=', 1)->orderBy('budget')->get();
         }
         
         // Filter sesuai result 

@@ -30,7 +30,7 @@
         <table class="table grades-table mt-4" data-aos="fade-up">
             <thead >
                 <tr>
-                    <td colspan="6" class="text-18-sb text-blue-dark">Semester</td>
+                    <td colspan="6" class="text-18-sb text-blue-dark">Term</td>
                 </tr>
                 <tr>
                     <th></th>
@@ -43,7 +43,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row" class="text-blue-dark">Mat</th>
+                    <th scope="row" class="text-blue-dark">Mathematics</th>
                     <td>
                         <div class="form-group grade-box">
                             <input id="grade" type="number" class="ml-2 form-control" name="grademat1" placeholder="0">
@@ -71,7 +71,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row" class="text-blue-dark">Bahasa Inggris</th>
+                    <th scope="row" class="text-blue-dark">English</th>
                     <td>
                         <div class="form-group grade-box">
                             <input id="grade" type="number" class="ml-2 form-control" name="gradebing1" placeholder="0">
@@ -99,7 +99,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row" class="text-blue-dark">Bahasa Indonesia</th>
+                    <th scope="row" class="text-blue-dark">Indonesia</th>
                     <td>
                         <div class="form-group grade-box">
                             <input id="grade" type="number" class="ml-2 form-control" name="gradebindo1" placeholder="0">
@@ -128,7 +128,7 @@
                 </tr>
                 @if ($jurusan == 'IPS')
                     <tr>
-                        <th scope="row" class="text-blue-dark">Ekonomi</th>
+                        <th scope="row" class="text-blue-dark">Economics</th>
                         <td>
                             <div class="form-group grade-box">
                                 <input id="grade" type="number" class="ml-2 form-control" name="gradeekon1" placeholder="0">
@@ -156,7 +156,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row" class="text-blue-dark">Geografi</th>
+                        <th scope="row" class="text-blue-dark">Geography</th>
                         <td>
                             <div class="form-group grade-box">
                                 <input id="grade" type="number" class="ml-2 form-control" name="gradegeo1" placeholder="0">
@@ -184,7 +184,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row" class="text-blue-dark">Sosiologi</th>
+                        <th scope="row" class="text-blue-dark">Sociology</th>
                         <td>
                             <div class="form-group grade-box">
                                 <input id="grade" type="number" class="ml-2 form-control" name="gradesos1" placeholder="0">
@@ -213,7 +213,7 @@
                     </tr>
                 @else
                     <tr>
-                        <th scope="row" class="text-blue-dark">Fisika</th>
+                        <th scope="row" class="text-blue-dark">Physics</th>
                         <td>
                             <div class="form-group grade-box">
                                 <input id="grade" type="number" class="ml-2 form-control" name="gradefis1" placeholder="0">
@@ -241,7 +241,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row" class="text-blue-dark">Kimia</th>
+                        <th scope="row" class="text-blue-dark">Chemistry</th>
                         <td>
                             <div class="form-group grade-box">
                                 <input id="grade" type="number" class="ml-2 form-control" name="gradekimia1" placeholder="0">
@@ -269,7 +269,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row" class="text-blue-dark">Biologi</th>
+                        <th scope="row" class="text-blue-dark">Biology</th>
                         <td>
                             <div class="form-group grade-box">
                                 <input id="grade" type="number" class="ml-2 form-control" name="gradebio1" placeholder="0">
@@ -298,7 +298,7 @@
                     </tr>   
                 @endif
                 <tr>
-                    <th scope="row" class="text-blue-dark">Sejarah</th>
+                    <th scope="row" class="text-blue-dark">History</th>
                     <td>
                         <div class="form-group grade-box">
                             <input id="grade" type="number" class="ml-2 form-control" name="gradesejarah1" placeholder="0">
@@ -326,7 +326,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row" class="text-blue-dark">Komputer</th>
+                    <th scope="row" class="text-blue-dark">Computer</th>
                     <td>
                         <div class="form-group grade-box">
                             <input id="grade" type="number" class="ml-2 form-control" name="gradekomp1" placeholder="0">

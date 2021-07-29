@@ -12,10 +12,10 @@
                     <ol class="breadcrumb ">
                     <li class="breadcrumb-item "><a href="/" class="text-decoration-none text-green-dark">Home</a></li>
                     <li class="breadcrumb-item "><a href="/careers" class="text-decoration-none text-green-dark">Career</a></li>
-                    <li class="breadcrumb-item active text-green" aria-current="page">Dentist</li>
+                    <li class="breadcrumb-item active text-green" aria-current="page">{{$career->jobtitle}}</li>
                     </ol>
                 </nav> 
-                <span class="text-h2 text-blue-dark">Dentist</span>
+                <span class="text-h2 text-blue-dark">{{$career->jobtitle}}</span>
             </div>
         </a>
         <div class="d-flex container-50vh p3 bg-white flex-column-r">
@@ -45,22 +45,22 @@
             </div>
             <div class="flex-grow-1 careerDesc order-3-r"data-aos="fade-up">
                 <span class="text-h3 text-green-dark">
-                    What Dentists do
+                    What {{$career->jobtitle}} do
                 </span> 
                 <br>
                 <span class="text-14-r text-darkgrey">
-                    Counsel and advise individuals and groups to promote optimum mental and emotional health, with an emphasis on prevention. May help individuals deal with a broad range of mental health issues, such as those associated with addictions and substance abuse; family, parenting, and marital problems; stress management; self-esteem; or aging.
+                    {{$career->overview}}
                 </span>
             </div>
             <div class="careerJurusan p2" data-aos="zoom-in-up">
                 <div class="jurusanContainer shadowBlue">
                     <span class="text-18-sb text-white">
-                        Jurusan
+                        Major
                     </span>
                     <br>
                     <a href="/major/1" class="text-decoration-none ">
                         <span class="text-h4 text-blue-light">
-                            Pendidikan Dokter Gigi
+                            {{$major['trans-name']}}
                         </span>
                     </a>
                 </div>
@@ -72,13 +72,11 @@
     <div class="container-100vh centerContainer p5 bgImg container-auto-r " style="background-image: url('{{asset('storage/assets/bg/bg-detail-jobdesc.png')}}');">
         <div class="w-50" data-aos="fade-up">
             <span class="text-h3 text-green-dark">
-                On the job, a dentist would...
+                On the job, a {{$career->jobtitle}} would...
             </span>
             <br>
             <span class="text-14-r text-darkgrey">
-                Maintain confidentiality of records relating to clients' treatment.
-                Encourage clients to express their feelings and discuss what is happening in their lives, helping them to develop insight into themselves or their relationships.
-                Collect information about clients through interviews, observation, or tests.
+                {{$career->jobdesc}}
             </span>
         </div>
     
@@ -93,32 +91,35 @@
             </span>
             <br>
             <span class="text-16-sb text-green">
-                Basic Skills
+                @if($career->basicskill)
+                    Basic Skills
+                @endif
             </span>
             <br>
             <span class="text-14-r text-darkgrey">
-                listening to others, not interrupting, and asking good questions
-                talking to others
+                {{$career->basicskill}}
             </span>
             <br>
             <br>
             <span class="text-16-sb text-green">
+                @if($career->socialskill)
                 Social Skills
+                @endif
             </span>
             <br>
             <span class="text-14-r text-darkgrey">
-                understanding people's reactions
-                looking for ways to help people
+                {{$career->socialskill}}
             </span>
             <br>
             <br>
             <span class="text-16-sb text-green">
+                @if($career->peopleskill)
                 People and Technology Systems Skills
+                @endif
             </span>
             <br>
             <span class="text-14-r text-darkgrey">
-                thinking about the pros and cons of different options and picking the best one
-                measuring how well a system is working and how to improve it
+                {{$career->peopleskill}}
             </span>
         </div>
        
@@ -129,26 +130,13 @@
     <div class="container-100vh centerContainer p5 bgImg container-auto-r" style="background-image: url('{{asset('storage/assets/bg/bg-detail-personality.png')}}');">        
         <div class="w-50"data-aos="fade-up">
             <span class="text-h3 text-green-dark">
+                @if($career->personality)
                 Personality
+                @endif
             </span>
             <br>
             <span class="text-14-r text-darkgrey">
-                People interested in this work like activities that include helping people, teaching, and talking.
-                <br>
-                <br>
-                They do well at jobs that need:
-                <br>
-                Self Control
-                <br>
-                Concern for Others
-                <br>
-                Integrity
-                <br>
-                Stress Tolerance
-                <br>
-                Dependability
-                <br>
-                Cooperation
+                {{$career->personality}}
             </span>
         </div>
     </div>

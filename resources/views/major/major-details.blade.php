@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<title>{{$details->major_name}}</title>
+<title>{{$details->trans_name}}</title>
 <style>
 
 </style>
@@ -12,10 +12,10 @@
                         <ol class="breadcrumb ">
                         <li class="breadcrumb-item "><a href="/" class="text-decoration-none text-green-dark">Home</a></li>
                         <li class="breadcrumb-item "><a href="/majors" class="text-decoration-none text-green-dark">Majors</a></li>
-                        <li class="breadcrumb-item active text-green" aria-current="page">{{$details->major_name}}</li>
+                        <li class="breadcrumb-item active text-green" aria-current="page">{{$details->trans_name}}</li>
                         </ol>
                     </nav> 
-                    <span class="text-h2 text-blue-dark">{{$details->major_name}}</span>
+                    <span class="text-h2 text-blue-dark">{{$details->trans_name}}</span>
                 </div>
             </a>
             <div class="d-flex container-50vh p3 bg-white flex-column-r">
@@ -47,15 +47,15 @@
                 <div class="careerJurusan d-flex flex-column p2"data-aos="zoom-in-up">
                     <div class="jurusanContainer shadowBlue">
                         <span class="text-18-sb text-white">
-                            Jurusan
+                            Stream
                         </span>
                         <br>
                         <span class="text-h3 text-blue-light">
                             @if($details->stream_science == 1)
-                                <a class="type text-12-sb">IPA</a>
+                                <a class="type text-12-sb">Science</a>
                             @endif
                             @if($details->stream_social == 1)
-                                <a class="type text-12-sb">IPS</a>
+                                <a class="type text-12-sb">Social</a>
                             @endif
                             &nbsp;
                         </span>
@@ -156,7 +156,7 @@
                                         </span>
                                     </div>
                                     <div class="cardType">
-                                        <a class="type text-12-sb" href="#">{{$prospects->name}}</a>
+                                        <a class="type text-12-sb" href="#">{{$prospects->trans_name}}</a>
                                     </div>
                                     <div class="cardDesc text-14-r text-darkgrey">
                                         {{Str::of($prospects->overview)->words(20, ' . . .')}}

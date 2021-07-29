@@ -21,7 +21,7 @@
             </span>
         </div>
         <div class="cardType">
-            <a class="type text-12-sb" href="/major/{{$recommendation->major_id}}">{{$recommendation->name}}</a>
+            <a class="type text-12-sb" href="/major/{{$recommendation->major_id}}">{{$recommendation->trans_name}}</a>
         </div>
         <div class="cardDesc text-14-r text-darkgrey">
             {{Str::of($recommendation->overview)->words(20, ' . . .')}}

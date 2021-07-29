@@ -14,7 +14,7 @@
 <span class="uniText" >
     <br>
     <span class="text-h4 text-blue-dark">
-        Choose your penjurusan 
+        Choose your stream 
     </span>
     <br>
     <span class="text-14-r text-white">
@@ -30,18 +30,18 @@
         <div class="row">
             <div class="form-group a d-flex justify-content-center flex-column"data-aos="fade-up">
                 <span class="text-h4 text-blue-dark">
-                    Choose your penjurusan 
+                    Choose your stream 
                 </span>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="jurusan" id="exampleRadios1" value="IPA" checked>
                     <label class="form-check-label" for="exampleRadios1">
-                      IPA
+                      Science
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="jurusan" id="exampleRadios2" value="IPS">
                     <label class="form-check-label" for="exampleRadios2">
-                      IPS
+                      Social
                     </label>
                   </div>
             </div>

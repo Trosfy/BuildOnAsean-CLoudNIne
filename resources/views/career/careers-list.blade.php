@@ -41,7 +41,7 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="rType" id="rType" {{ old('rType', 'all') == $major->name ? 'checked' : ''}} value="{{$major->name}}" onclick="myform.submit()">
                         <label class="form-check-label text-14-r" for="rType">
-                            {{$major->name}}
+                            {{$major['trans-name']}}
                         </label>
                     </div>
                     @endforeach
@@ -76,7 +76,7 @@
                     </span>
                 </div>
                 <div class="cardType">
-                    <a class="type text-12-sb" href="/major/{{$career->major_id}}">{{$career->major_name}}</a>
+                    <a class="type text-12-sb" href="/major/{{$career->major_id}}">{{$career->trans_name}}</a>
                 </div>
                 <div class="cardDesc text-14-r text-darkgrey">
                     {{Str::of($career->overview)->words(20, ' . . .')}}

@@ -30,7 +30,7 @@
             
                 @csrf
                 <div class="form-group col-md-6 mb-0">
-                    <span class="text-16-sb">Jurusan</span>
+                    <span class="text-16-sb">Stream</span>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="rType" id="rType" {{ old('rType', 'all') == 'all' ? 'checked' : ''}} value="all" onclick="myform.submit()">
                         <label class="form-check-label text-14-r" for="radioAll">
@@ -40,13 +40,13 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="rType" id="rType" {{ old('rType', 'all') == 'IPA' ? 'checked' : ''}} value="IPA" onclick="myform.submit()">
                         <label class="form-check-label text-14-r" for="radioCareer">
-                            IPA
+                            Science
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="rType" id="rType" {{ old('rType', 'all') == 'IPS' ? 'checked' : ''}} value="IPS" onclick="myform.submit()">
                         <label class="form-check-label text-14-r" for="radioMajor">
-                            IPS
+                            Social
                         </label>
                     </div>
                 </div>
@@ -81,16 +81,16 @@
                         <br>
                         <a href="/major/{{$major->id}}" class="text-decoration-none text-blue-dark">
                         <span class="text-h4 text-blue-dark">
-                            {{$major->major_name}}
+                            {{$major->trans_name}}
                         </span>
                     </a>
                     </div>
                     <div class="cardType">
                         @if($major->stream_science == 1)
-                            <a class="type text-12-sb">IPA</a>
+                            <a class="type text-12-sb">Science</a>
                         @endif
                         @if($major->stream_social == 1)
-                            <a class="type text-12-sb">IPS</a>
+                            <a class="type text-12-sb">Social</a>
                         @endif
                     </div>
                     <div class="cardDesc text-14-r text-darkgrey">

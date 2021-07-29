@@ -13,7 +13,7 @@
             @else
                 {{count($careers)}} 
             @endif
-            
+
         
         </span>
         results for
@@ -67,7 +67,7 @@
                         <div class="cardTitle">
                             <a href="/major/{{$major->id}}" class="text-decoration-none text-blue-dark">
                             <span class="text-h4 text-blue-dark">
-                                {{$major->name}}
+                                {{$major['trans-name']}}
                             </span>
                         </a>
                         </div>
@@ -127,7 +127,7 @@
                                 <br>
                                 <a href="/major/{{$major->id}}" class="text-decoration-none text-blue-dark">
                                 <span class="text-h4 text-blue-dark">
-                                    {{$major->name}}
+                                    {{$major['trans-name']}}
                                 </span>
                             </a>
                             </div>

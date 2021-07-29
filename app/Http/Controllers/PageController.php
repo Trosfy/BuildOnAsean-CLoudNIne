@@ -163,7 +163,7 @@ class PageController extends Controller
     public function search(Request $request){
         $query = $request['query'];
         // dd($query);
-        $majors = Major::where('name', 'like', '%'.$query.'%')->get();
+        $majors = Major::where('name', 'like', '%'.$query.'%')->orWhere('trans-name', 'like', '%'.$query.'%')->get();
         // dd($majors);
         $careers = Career::where('jobtitle', 'like', '%'.$query.'%')->get();
         // $major = $majors->uni_majors()->first();
@@ -174,7 +174,7 @@ class PageController extends Controller
     public function filter(Request $request)
     {
         $query = $request['query'];
-        $majors = Major::where('name', 'like', '%'.$query.'%')->get();
+        $majors = Major::where('name', 'like', '%'.$query.'%')->orWhere('trans-name', 'like', '%'.$query.'%')->get();
         // dd($majors);
         $careers = Career::where('jobtitle', 'like', '%'.$query.'%')->get();
         // $major = $majors->uni_majors()->first();
