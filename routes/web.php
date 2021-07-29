@@ -34,15 +34,20 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/major-assessment/2', 'AssessmentController@majorAssessment2save');
     Route::post('/major-assessment/3', 'AssessmentController@majorAssessment3save');
     // Career asssessment
-    Route::get('/career-assessment-q', 'AssessmentController@careerAssessmentQ');
-    Route::get('/career-assessment-result', 'AssessmentController@viewCareerResult');
-    Route::post('/career-assessment-q', 'AssessmentController@careerAssessmentSave'); 
+    Route::group(['middleware'=> 'has_taken_major'],function(){
+        Route::get('/career-assessment-q', 'AssessmentController@careerAssessmentQ');
+        Route::get('/career-assessment-result', 'AssessmentController@viewCareerResult');
+        Route::post('/career-assessment-q', 'AssessmentController@careerAssessmentSave');
+    }); 
 });
 // Major asssessment
 Route::get('/major-assessment', 'AssessmentController@majorAssessment');
 
 // Career asssessment
-Route::get('/career-assessment', 'AssessmentController@careerAssessment');
+Route::group(['middleware'=> 'has_taken_major'],function(){
+    Route::get('/career-assessment', 'AssessmentController@careerAssessment');
+});
+
 
 // Careers
 Route::get('/careers', 'CareerController@showAll');
