@@ -15,11 +15,7 @@
                 <li><a href="/major-assessment" class="nav-link px-2 text-green-dark-hover">Major Test</a></li>
                 <li><a href="/career-assessment" class="nav-link px-2 text-green-dark-hover">Career Test</a></li>
                 <li><a href="/majors" class="nav-link px-2 text-green-dark-hover">Majors</a></li>
-                <li>
-                  @if(Auth::check() and !is_null(Auth::user()->api_result))
-                    <a href="/careers" class="nav-link px-2 text-green-dark-hover">Careers</a>
-                  @endif
-                </li>
+                <li><a href="/careers" class="nav-link px-2 text-green-dark-hover">Careers</a></li>
               
                 {{-- <li><a href="/about" class="nav-link px-2 text-green-dark-hover">About</a></li> --}}
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 searchBar" action="/search" method="GET">

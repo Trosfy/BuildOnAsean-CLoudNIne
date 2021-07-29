@@ -3,11 +3,7 @@
 
 @section('content')
 <div class="container-100vh flex-center bgImg" style="background-image: url('{{asset('storage/assets/bg/bg-21.png')}};" >
-    @if(session()->has('message'))
-        <div class="alert alert-success">
-            {{ session()->get('message') }}
-        </div>
-    @endif
+
     <div class="text-center headerCareerTest" data-aos="fade-up">
         <span class="text-h2 text-white" >Find your perfect major</span>
         <br>
