@@ -2,8 +2,6 @@
 <title>University/Major Assessment?</title>
 <style>
     .uniAssessmentContainer{
-        /* border: 2px solid green; */
-        /* height: 70vh; */
         width: 100%;
     }
     .formUni{
@@ -20,9 +18,6 @@
     .imgContainerr{
         padding: 5rem 5rem !important;
         text-align: center !important;
-    }
-    div{
-        /* border: 2px solid plum !important; */
     }
 
 </style>

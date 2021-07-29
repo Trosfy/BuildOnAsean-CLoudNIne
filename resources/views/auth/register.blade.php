@@ -36,74 +36,8 @@
                 <div class="row text-h2 mt-5" style="margin-left: 0 !important;">
                     <span class="text-center text-darkblue mb-3">Create account</span>
                 </div>
-                {{-- <div class="row text-center" style="margin-left: 0 !important;">
-                    <span class="text-center">sign in with google</span>
-                </div>
-                <div class="row text-14-r text-center" style="margin-left: 0 !important;">
-                    <span class="text-center mb-4">or use your email for registration</span>
-                </div> --}}
+              
                 <div class="row" style="margin-left: 0 !important;">
-                        {{-- <form method="POST" action="{{ route('register') }}">
-                            @csrf
-    
-                            <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-    
-                                <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-    
-                                    @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-    
-                            <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-    
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-    
-                                    @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-    
-                            <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-    
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-    
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-    
-                            <div class="form-group row">
-                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-    
-                                <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                                </div>
-                            </div>
-    
-                            <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Register') }}
-                                    </button>
-                                </div>
-                            </div>
-                        </form> --}}
                         <form method="POST" action="{{ route('register') }}" class="text-14-sb">
                             @csrf
                           
@@ -215,13 +149,6 @@
                         <span class="text-center ">Already have an account? <a class="text-16-sb text-decoration-none text-white" href="{{ route('login') }}">{{ __('Login') }}</a></span>
                     </div>
                 </div>
-            {{-- <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-
-                </div>
-            </div> --}}
         </div>
     </div>
 </div>

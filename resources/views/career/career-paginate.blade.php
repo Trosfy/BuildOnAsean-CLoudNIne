@@ -81,18 +81,6 @@
                         {{$questions->withQueryString()->links()}}
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    {{-- <div class="btnGroupContainer">
-                        <div class="btnContainer">
-                            <button class="btn btn-primary" id="prevBtn" onclick="nextPrev(-1)" type="button"><- Back</button>
-                        </div>
-    
-                        <div class="btnContainer">
-                            <button class="btn btn-primary" id="nextBtn" onclick="nextPrev(1)"type="button">Next -></button>
-        
-                        </div>
-                            
-                    </div> --}}
-
                 </div>
 
 

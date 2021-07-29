@@ -25,7 +25,6 @@
 <form method="POST" action="/careers" class="text-14-sb" name="myform" id="myform">
 <div class="container-200vh d-flex p2 bg-pink-light justify-content-center">
     <div class="left p2">
-        {{-- <span>Filters</span> --}}
         <div class="filterContainer p2 mt-5 shadowGreen">
             
                 @csrf
@@ -76,7 +75,7 @@
                     </span>
                 </div>
                 <div class="cardType">
-                    <a class="type text-12-sb" href="/major/{{$career->major_id}}">{{$career->trans_name}}</a>
+                    <a class="type text-12-sb text-blue-light" href="/major/{{$career->major_id}}">{{$career->trans_name}}</a>
                 </div>
                 <div class="cardDesc text-14-r text-darkgrey">
                     {{Str::of($career->overview)->words(20, ' . . .')}}

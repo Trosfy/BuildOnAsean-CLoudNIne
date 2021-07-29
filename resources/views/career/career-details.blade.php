@@ -58,7 +58,7 @@
                         Major
                     </span>
                     <br>
-                    <a href="/major/1" class="text-decoration-none ">
+                    <a href="/major/{{$major->id}}" class="text-decoration-none ">
                         <span class="text-h4 text-blue-light">
                             {{$major['trans-name']}}
                         </span>

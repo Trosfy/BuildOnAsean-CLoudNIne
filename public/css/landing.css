@@ -1045,7 +1045,8 @@ table .form-group{
 }
 
 .jurusanContainer{
-    max-height: 10rem !important;
+    max-height: 12rem !important;
+    height: max-content !important;
     background-color: var(--color-blue-dark);
 }
 

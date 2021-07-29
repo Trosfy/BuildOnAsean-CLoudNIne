@@ -61,7 +61,7 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r2" id="exampleRadios1" value="R" checked>
+                                    <input class="form-check-input" type="radio" name="r2" id="exampleRadios1" value="I" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
@@ -148,7 +148,7 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r5" id="exampleRadios1"value="I" checked >
+                                    <input class="form-check-input" type="radio" name="r5" id="exampleRadios1"value="E" checked >
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
@@ -165,7 +165,7 @@
                     </div>  
 
                 </div>
-{{-- 
+
                 <div class="tab">
                     <div class="p10 d-flex flex-column justify-content-center">
                         <span class="text-12-sb text-darkgrey">
@@ -178,13 +178,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r6" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r6" id="exampleRadios1" value="C" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r6" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r6" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -207,13 +207,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r7" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r7" id="exampleRadios1" value="R" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r7" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r7" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -236,13 +236,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r8" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r8" id="exampleRadios1" value="A" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r8" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r8" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -265,13 +265,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r9" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r9" id="exampleRadios1" value="C" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r9" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r9" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -294,13 +294,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r10" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r10" id="exampleRadios1" value="E" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r10" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r10" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -324,13 +324,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r11" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r11" id="exampleRadios1" value="I" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r11" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r11" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -353,13 +353,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r12" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r12" id="exampleRadios1" value="S" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r12" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r12" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -382,13 +382,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r13" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r13" id="exampleRadios1" value="S" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r13" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r13" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -411,13 +411,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r14" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r14" id="exampleRadios1" value="R" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r14" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r14" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -440,13 +440,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r15" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r15" id="exampleRadios1" value="C" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r15" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r15" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -471,13 +471,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r16" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r16" id="exampleRadios1" value="E" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r16" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r16" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -500,13 +500,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r17" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r17" id="exampleRadios1" value="A" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r17" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r17" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -529,13 +529,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r18" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r18" id="exampleRadios1" value="I" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r18" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r18" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -558,13 +558,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r19" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r19" id="exampleRadios1" value="E" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r19" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r19" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -587,13 +587,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r20" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r20" id="exampleRadios1" value="S" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r20" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r20" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -618,13 +618,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r21" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r21" id="exampleRadios1" value="I" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r21" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r21" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -647,13 +647,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r22" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r22" id="exampleRadios1" value="R" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r22" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r22" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -676,13 +676,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r23" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r23" id="exampleRadios1" value="A" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r23" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r23" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -705,13 +705,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r24" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r24" id="exampleRadios1" value="C" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r24" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r24" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -734,13 +734,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r25" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r25" id="exampleRadios1" value="C" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r25" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r25" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -765,13 +765,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r26" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r26" id="exampleRadios1" value="I" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r26" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r26" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -794,13 +794,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r27" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r27" id="exampleRadios1" value="A" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r27" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r27" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -823,13 +823,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r28" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r28" id="exampleRadios1" value="S" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r28" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r28" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -852,13 +852,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r29" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r29" id="exampleRadios1" value="E" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r29" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r29" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -881,13 +881,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r30" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r30" id="exampleRadios1" value="R" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r30" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r30" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -912,13 +912,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r31" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r31" id="exampleRadios1" value="A" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r31" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r31" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -941,13 +941,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r32" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r32" id="exampleRadios1" value="R" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r32" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r32" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -970,13 +970,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r33" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r33" id="exampleRadios1" value="I" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r33" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r33" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -999,13 +999,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r34" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r34" id="exampleRadios1" value="S" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r34" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r34" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -1028,13 +1028,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r35" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r35" id="exampleRadios1" value="C" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r35" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r35" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -1059,13 +1059,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r36" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r36" id="exampleRadios1" value="E" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r36" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r36" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -1088,13 +1088,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r37" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r37" id="exampleRadios1" value="R" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r37" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r37" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -1117,13 +1117,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r38" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r38" id="exampleRadios1" value="C" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r38" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r38" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -1146,13 +1146,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r39" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r39" id="exampleRadios1" value="I" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r39" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r39" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -1175,13 +1175,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r40" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r40" id="exampleRadios1" value="S" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r40" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r40" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -1205,13 +1205,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r41" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r41" id="exampleRadios1" value="A" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r41" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r41" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -1234,13 +1234,13 @@
                         <div class="row text-darkgrey text-14-r">
                             <div class="form-group a d-flex justify-content-center flex-column mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r42" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="r42" id="exampleRadios1" value="E" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Agree
                                     </label>
                                     </div>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r42" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="r42" id="exampleRadios2" value="0">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Disagree
                                     </label>
@@ -1250,7 +1250,7 @@
         
                     </div>  
 
-                </div> --}}
+                </div> 
 
             </div>
 
@@ -1276,10 +1276,10 @@
         </span>
         <br>
         <span class="text-14-r">
-            Click the button below to view your results!
+            Please wait, we are processing your results!
         </span>
         <br>
-        <a href="/career-assessment-result" class="btn btn-primary mt-4">See your results</a>
+
     </div>
 </div>
 @section('script')

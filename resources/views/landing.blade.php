@@ -1,8 +1,5 @@
 @extends('layouts.app')
 <title>Home</title>
-<style>
-
-</style>
 
 @section('content')
 <div class="container-100vh d-flex justify-content-center align-content-center align-items-center pHeader flex-column-r " style="background-image: url({{asset('storage/assets/bg/bg-11.png')}});">
@@ -14,7 +11,7 @@
         
         <div>
             <span class="text-h1 text-green-light">
-                Plan your next step with us 
+                Plan your <span class="text-pink-dark">next step</span> with us 
             </span>
             <br>
             <span class="text-14-r text-white">
