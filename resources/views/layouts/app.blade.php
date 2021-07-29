@@ -39,17 +39,14 @@
 
     <div class="footer bg-green-light">
         <div class="d-flex justify-content-between align-items-center p2">
-            <div class="d-flex">
-                <img src="{{asset('storage/assets/icons/fi-rr-asterisk.svg')}}" alt="" class="filter-white logo ml-5">
-                <span class="ml-3">nama web nya apa?</span>
-                
+            <div class="d-flex flex-column justify-content-end">
+                <a href="/" class="text-decoration-none">
+                    <img src="{{asset('storage/assets/icons/logo.svg')}}" alt="" class="filter-white logo ml-3">
+                <span class="ml-3 text-14-sb mt-2 text-white">mynextstep</span>
+            </a>
             </div>
             <div class="d-flex mr-5">
                 <div class="text-white text-14-sb">
-                    <a href="/major-assessment" class="text-decoration-none text-white">Major Test</a>
-                    <br>
-                    <a href="/career-assessment"class="text-decoration-none text-white">Career Test</a>
-                    <br>
                     <a href="/majors"class="text-decoration-none text-white">Majors</a>
                     <br>
                     <a href="/careers"class="text-decoration-none text-white">Careers</a>
@@ -61,8 +58,8 @@
                 </div> --}}
             </div>
         </div>
-        <div class="mt-auto text-center p1">
-            © who
+        <div class="mt-auto text-center p1 text-white">
+            © CloudNine - BuildOn ASEAN 2021
         </div>
     </div>
 

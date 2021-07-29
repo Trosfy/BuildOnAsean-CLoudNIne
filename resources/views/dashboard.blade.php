@@ -19,7 +19,6 @@
             @foreach ($major_recommendation as $major)
                 <div class="cardContainer shadow">
                     <div class="cardImgContainer">
-                        {{-- {{$major->img}} --}}
                         <img src="{{asset('storage/assets/images/majors/'.$major->img)}}" alt="image">
                     </div>
                     <div class="cardTextContainer">
@@ -34,21 +33,19 @@
                         </div>
                         <div class="cardType">
                             @if($major->stream_science == 1)
-                                <a class="type text-12-sb">IPA</a>
+                                <a class="type text-12-sb text-blue-light">IPA</a>
                             @endif
                             @if($major->stream_social == 1)
-                                <a class="type text-12-sb">IPS</a>
+                                <a class="type text-12-sb text-blue-light">IPS</a>
                             @endif
                         </div>
                         <div class="cardDesc text-14-r text-darkgrey">
-                            {{-- Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ... --}}
                             {{Str::of($major->description)->words(20, ' . . .')}}
                         </div>
                         <div class="cardFooter">
                             <a href="/major/{{$major->id}}" class="text-decoration-none text-white"><button class="btn btn-primary text-12-sb">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></button></a>
                             <span class="cardTuition text-h4 text-blue-dark">
-                                {{-- Rp 100.000.000 --}}
-                                {{$major->budget}}
+                                Rp {{$major->budget}}
                             </span>
                         </div>
                     </div>
@@ -94,9 +91,10 @@
     </div>
 @endif
 
-
 @if(is_null($major_recommendation))
-    <div class="aa container-100vh d-flex justify-content-center align-items-center bgImg container-auto-r" style="background-image: url({{asset('storage/assets/bg/bg-14.svg')}});">
+    <div class="aa container-100vh d-flex flex-column justify-content-center align-items-center bgImg container-auto-r bg-pink-light">
+        <span class="text-h4 text-blue-dark mb-2">Recommended Careers</span>
+        <br>
         <div class="border-50 bg-blue-dark cardd d-flex justify-content-around align-items-center flex-column p5 min-h-50  mb-2-r w-75-r" data-aos="zoom-in-up">
             <img src="{{asset('storage/assets/illustrations/home-31.svg')}}" alt="image" style="object-fit: contain;" class="imgSquare">
 
@@ -110,7 +108,9 @@
     </div>
     @elseif (is_null($career_recommendation))
         @if(!is_null($major_recommendation))
-        <div class="aa container-100vh d-flex justify-content-center align-items-center bgImg container-auto-r" style="background-image: url({{asset('storage/assets/bg/bg-14.svg')}});">
+        <div class="aa container-100vh d-flex flex-column justify-content-center align-items-center bgImg container-auto-r bg-pink-light">
+            <span class="text-h4 text-blue-dark mb-2">Recommended Careers</span>
+            <br>
             <div class="border-50 bg-blue-dark cardd d-flex justify-content-around align-items-center flex-column p5 min-h-50 mb-2-r  w-75-r" data-aos="zoom-in-up">
                 <img src="{{asset('storage/assets/illustrations/home-32.svg')}}" alt="image" style="object-fit: contain;" class="imgSquare">
         

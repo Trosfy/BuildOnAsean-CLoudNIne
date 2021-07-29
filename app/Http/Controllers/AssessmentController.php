@@ -361,9 +361,9 @@ class AssessmentController extends Controller
 
         // Filter sesuai budget dan jurusan 
         if($jurusan == 'IPA'){
-            $data = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS university_name' , 'majors.name', 'majors.trans-name AS trans_name','uni_majors.budget','majors.id','majors.stream-social as stream_social','majors.stream-science as stream_science')->where('budget', '<=', $budget)->where('stream-science', '=', 1)->orderBy('budget')->get();
+            $data = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS university_name' ,'majors.img AS major_img', 'majors.name', 'majors.trans-name AS trans_name','uni_majors.budget','majors.id','majors.stream-social as stream_social','majors.stream-science as stream_science')->where('budget', '<=', $budget)->where('stream-science', '=', 1)->orderBy('budget')->get();
         } else {
-            $data = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS university_name' , 'majors.name', 'majors.trans-name AS trans_name','uni_majors.budget','majors.id','majors.stream-social as stream_social','majors.stream-science as stream_science')->where('budget', '<=', $budget)->where('stream-social', '=', 1)->orderBy('budget')->get();
+            $data = DB::table('uni_majors')->join('majors', 'majors.id', '=', 'uni_majors.major_id')->join('universities', 'universities.id', '=', 'uni_majors.university_id')->select('universities.name AS university_name' ,'majors.img AS major_img', 'majors.name', 'majors.trans-name AS trans_name','uni_majors.budget','majors.id','majors.stream-social as stream_social','majors.stream-science as stream_science')->where('budget', '<=', $budget)->where('stream-social', '=', 1)->orderBy('budget')->get();
         }
         
         // Filter sesuai result 

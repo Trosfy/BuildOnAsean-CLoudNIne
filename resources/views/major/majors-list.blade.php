@@ -87,10 +87,10 @@
                     </div>
                     <div class="cardType">
                         @if($major->stream_science == 1)
-                            <a class="type text-12-sb">Science</a>
+                            <a class="type text-12-sb  text-blue-light">Science</a>
                         @endif
                         @if($major->stream_social == 1)
-                            <a class="type text-12-sb">Social</a>
+                            <a class="type text-12-sb  text-blue-light">Social</a>
                         @endif
                     </div>
                     <div class="cardDesc text-14-r text-darkgrey">

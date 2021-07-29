@@ -14,11 +14,11 @@
         
         <div>
             <span class="text-h1 text-green-light">
-                Lorem ipsum dolor, sit amet. 
+                Plan your next step with us 
             </span>
             <br>
-            <span class="text-18-r text-white">
-                Blanditiis officia voluptate, voluptatem nemo assumenda aliquid velit quia saepe dolorum voluptatum alias ipsam labore cupiditate aperiam corrupti illum dolor. Perspiciatis, quos?
+            <span class="text-14-r text-white">
+                We know that choosing a major can be difficult, with so many options and your many varied interests. If you’re not sure what you want to study yet, have no fear. Take our short assessment and find out which majors may be a good fit for you and your future based on your grades and your budget. 
             </span>
         </div>
         <div class="mt-4">

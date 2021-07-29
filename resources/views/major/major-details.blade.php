@@ -25,7 +25,7 @@
                             Contents
                         </span>
                         <div class="mt-2">
-                            <a href="#overview" class="text-decoration-none">1. What they do</a>
+                            <a href="#overview" class="text-decoration-none">1. Major Overview</a>
                         </div>
                         <div class="mt-2">
                             <a href="#uni" class="text-decoration-none">2. Universities Offering This Degree</a>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="flex-grow-1 careerDesc order-3-r"data-aos="fade-up">
                     <span class="text-h3 text-green-dark">
-                        What {{$details->career_name}}s do
+                        Major Overview
                     </span> 
                     <br>
                     <span class="text-14-r text-darkgrey">
@@ -52,10 +52,10 @@
                         <br>
                         <span class="text-h3 text-blue-light">
                             @if($details->stream_science == 1)
-                                <a class="type text-12-sb">Science</a>
+                                <span class="type text-12-sb">Science</span>
                             @endif
                             @if($details->stream_social == 1)
-                                <a class="type text-12-sb">Social</a>
+                                <span class="type text-12-sb">Social</span>
                             @endif
                             &nbsp;
                         </span>
@@ -156,7 +156,7 @@
                                         </span>
                                     </div>
                                     <div class="cardType">
-                                        <a class="type text-12-sb" href="#">{{$prospects->trans_name}}</a>
+                                        <a class="type text-12-sb text-decoration-none text-blue-light" href="#">{{$prospects->trans_name}}</a>
                                     </div>
                                     <div class="cardDesc text-14-r text-darkgrey">
                                         {{Str::of($prospects->overview)->words(20, ' . . .')}}

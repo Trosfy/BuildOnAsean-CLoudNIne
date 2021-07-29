@@ -22,6 +22,7 @@
     </span>
 
 </div>
+
 <div class="container-200vh d-flex p2 bg-pink-light justify-content-center">
     <div class="left p2">
         {{-- <span>Filters</span> --}}
@@ -56,7 +57,7 @@
             
         @if(Request::input('filter') == 'major')
             @if(count($majors) == 0)
-                <div>EMPTY</div>
+            <div class="vw-60 mt-5">There are no matching majors.</div>
             @else
             @foreach ($majors as $major)
                 <div class="cardContainer shadow"data-aos="zoom-in-up">
@@ -83,7 +84,7 @@
             @endif
         @elseif(Request::input('filter') == 'career')
             @if(count($careers) == 0)
-                <div>EMPTY</div>
+            <div class="vw-60 mt-5">There are no matching careers.</div>
             @else
                 @foreach($careers as $career)
                     <div class="cardContainer shadow"data-aos="zoom-in-up">
@@ -111,7 +112,7 @@
             @endif
         @else
             @if(count($majors)+count($careers) == 0)
-                <div>EMPTY</div>
+            <div class="vw-60 mt-5">There are no matching majors and careers.</div>
             @else
                 @foreach ($majors as $major)
                     <div class="cardContainer shadow"data-aos="zoom-in-up">

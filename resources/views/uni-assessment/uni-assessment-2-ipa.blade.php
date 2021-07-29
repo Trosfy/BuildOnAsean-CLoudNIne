@@ -17,7 +17,7 @@
     </span>
     <br>
     <span class="text-14-r text-white">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae architecto quis eligendi, alias non corrupti repellendus. 
+
     </span>
 </span>
 @endsection

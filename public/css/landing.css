@@ -1068,9 +1068,13 @@ table .form-group{
 }
 
 .type:hover{
-    color: var(--color-blue-dark) !important;
-    border: 2px solid var(--color-blue-dark) !important;
-    transition: 0.75s;
+    /* color: var(--color-blue-dark) !important; */
+    /* border: 2px solid var(--color-blue-dark) !important; */
+    /* transition: 0.75s; */
+}
+
+.vw-60{
+    min-width: 60vw !important;
 }
 
 .min-h-50{
