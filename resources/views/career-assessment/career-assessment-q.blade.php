@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<title>Career Assessment</title>
 <style>
     .tab, .completed {
         display: none;

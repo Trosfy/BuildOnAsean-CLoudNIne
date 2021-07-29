@@ -1,7 +1,5 @@
 @extends('layouts.app')
-<style>
-
-</style>
+<title>Home</title>
 @section('content')
 <div class="container-50vh d-flex  align-items-end bgImg"  style="background-image: url({{asset('storage/assets/bg/bg-user.png')}});">
     <div class="mb-5 ml-5 d-flex  align-items-center justify-content-around ">
@@ -17,41 +15,43 @@
                 <span class="text-h4 text-blue-dark">Recommended Major</span>
             </div>
             @foreach ($major_recommendation as $major)
-                <div class="cardContainer shadow">
-                    <div class="cardImgContainer">
-                        {{-- <img src="{{asset('storage/assets/images/majors/'.$major->img)}}" alt="image"> --}}
-                        <?php $url = "https://cloudnineassets.s3.amazonaws.com/images/majors/".$major->img?>
-                        <img src="{{$url}}" alt="image">
+            <div class="cardContainer shadow"data-aos="zoom-in-up">
+                <div class="cardImgContainer">
+                    {{-- <img src="{{asset('storage/assets/images/majors/'.$major->img)}}" alt="image"> --}}
+                    <?php $url = "https://cloudnineassets.s3.amazonaws.com/images/majors/".$major->img?>
+                    <img src="{{$url}}" alt="image">
+                </div>
+                <div class="cardTextContainer d-flex flex-column justify-content-center w-100">
+                    <div class="cardTitle">
+                        <span class="text-14-r text-blue-dark">
+                            {{$major->university_name}}
+                        </span>
+                        <br>
+                        <a href="/major/{{$major->id}}" class="text-decoration-none text-blue-dark">
+                        <span class="text-h4 text-blue-dark">
+                            {{$major->trans_name}}
+                        </span>
+                    </a>
                     </div>
-                    <div class="cardTextContainer">
-                        <div class="cardTitle">
-                            <span class="text-14-r text-blue-dark">
-                                {{$major->university_name}}
-                            </span>
-                            <br>
-                            <span class="text-h4 text-blue-dark">
-                                {{$major->name}}
-                            </span>
-                        </div>
-                        <div class="cardType">
-                            @if($major->stream_science == 1)
-                                <a class="type text-12-sb text-blue-light">IPA</a>
-                            @endif
-                            @if($major->stream_social == 1)
-                                <a class="type text-12-sb text-blue-light">IPS</a>
-                            @endif
-                        </div>
-                        <div class="cardDesc text-14-r text-darkgrey">
-                            {{Str::of($major->description)->words(20, ' . . .')}}
-                        </div>
-                        <div class="cardFooter">
-                            <a href="/major/{{$major->id}}" class="text-decoration-none text-white"><button class="btn btn-primary text-12-sb">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></button></a>
-                            <span class="cardTuition text-h4 text-blue-dark">
-                                Rp {{$major->budget}}
-                            </span>
-                        </div>
+                    <div class="cardType">
+                        @if($major->stream_science == 1)
+                            <a class="type text-12-sb  text-blue-light">Science</a>
+                        @endif
+                        @if($major->stream_social == 1)
+                            <a class="type text-12-sb  text-blue-light">Social</a>
+                        @endif
+                    </div>
+                    <div class="cardDesc text-14-r text-darkgrey">
+                        {{Str::of($major->description)->words(20, ' . . .')}}
+                    </div>
+                    <div class="cardFooter">
+                    <button type="button" class="btn btn-primary text-12-sb" onclick="window.location.href='/major/{{$major->id}}'">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></button>
+                        <span class="cardTuition text-h4 text-blue-dark">
+                            Rp {{$major->budget}}
+                        </span>
                     </div>
                 </div>
+            </div>
             @endforeach
         </div>
     </div>
@@ -64,29 +64,26 @@
                 <span class="text-h4 text-blue-dark">Recommended Careers</span>
             </div>
             @foreach ($career_recommendation as $career)
-            <div class="cardContainer shadow">
+            <div class="cardContainer shadow"data-aos="zoom-in-up">
                 <div class="cardImgContainer">
-                    {{-- <img src="{{asset('storage/assets/images/careers/'.$career->career_img)}}" alt="image"> --}}
+                    {{-- <img src="{{asset('storage/assets/images/careers/'.$career->img)}}" alt="image"> --}}
                     <?php $url = "https://cloudnineassets.s3.amazonaws.com/images/careers/".$career->career_img?>
                     <img src="{{$url}}" alt="image">
                 </div>
-                <div class="cardTextContainer">
+                <div class="cardTextContainer d-flex flex-column justify-content-center w-100">
                     <div class="cardTitle">
                         <span class="text-h4 text-blue-dark mt-4">
-                            {{$career->jobtitle}}
+                            <a href="/career/{{$career->id}}" class="text-decoration-none text-blue-dark">{{$career->jobtitle}}</a>
                         </span>
                     </div>
                     <div class="cardType">
-                        <a class="type text-12-sb">{{$career->name}}</a>
+                        <a class="type text-12-sb text-blue-light" href="/major/{{$career->major_id}}">{{$career->trans_name}}</a>
                     </div>
                     <div class="cardDesc text-14-r text-darkgrey">
                         {{Str::of($career->overview)->words(20, ' . . .')}}
                     </div>
                     <div class="cardFooter">
-                        <button class="btn btn-primary btnRightt text-12-sb"><a href="/career/{{$career->career_id}}" class="text-decoration-none text-white">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></a></button>
-                        {{-- <span class="cardTuition text-h4">
-                            Rp 100.000.000
-                        </span> --}}
+                        <button class="btn btn-primary btnRightt text-12-sb"><a href="/career/{{$career->id}}" class="text-decoration-none text-white">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></a></button>
                     </div>
                 </div>
             </div>
