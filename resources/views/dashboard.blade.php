@@ -19,7 +19,9 @@
             @foreach ($major_recommendation as $major)
                 <div class="cardContainer shadow">
                     <div class="cardImgContainer">
-                        <img src="{{asset('storage/assets/images/majors/'.$major->img)}}" alt="image">
+                        {{-- <img src="{{asset('storage/assets/images/majors/'.$major->img)}}" alt="image"> --}}
+                        <?php $url = "https://cloudnineassets.s3.amazonaws.com/images/majors/".$major->img?>
+                        <img src="{{$url}}" alt="image">
                     </div>
                     <div class="cardTextContainer">
                         <div class="cardTitle">
@@ -64,7 +66,9 @@
             @foreach ($career_recommendation as $career)
             <div class="cardContainer shadow">
                 <div class="cardImgContainer">
-                    <img src="{{asset('storage/assets/images/careers/'.$career->career_img)}}" alt="image">
+                    {{-- <img src="{{asset('storage/assets/images/careers/'.$career->career_img)}}" alt="image"> --}}
+                    <?php $url = "https://cloudnineassets.s3.amazonaws.com/images/careers/".$career->career_img?>
+                    <img src="{{$url}}" alt="image">
                 </div>
                 <div class="cardTextContainer">
                     <div class="cardTitle">

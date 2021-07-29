@@ -12,7 +12,9 @@
 @foreach ($career_recommendation as $recommendation)
 <div class="cardContainer shadow"data-aos="zoom-in-up">
     <div class="cardImgContainer">
-        <img src="{{asset('storage/assets/images/careers/'.$recommendation->career_img)}}" alt="image">
+        {{-- <img src="{{asset('storage/assets/images/careers/'.$recommendation->career_img)}}" alt="image"> --}}
+        <?php $url = "https://cloudnineassets.s3.amazonaws.com/images/careers/".$recommendation->career_img?>
+        <img src="{{$url}}" alt="image">
     </div>
     <div class="cardTextContainer d-flex flex-column justify-content-center w-100">
         <div class="cardTitle">
