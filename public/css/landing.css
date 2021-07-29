@@ -914,6 +914,106 @@ table .form-group{
 }
 /*  */
 
+/* PAGINATION */
+.paginationContainer nav{
+    width: auto !important;
+    background-color: transparent !important;
+}
+
+.paginationContainer nav ul{
+    display: flex;
+    justify-content: center;
+}
+
+.pagination{
+    margin: 2vh;
+    justify-content: center;
+}
+
+.pagination nav{
+    background-color: transparent;
+    border: none;
+
+}
+
+.pagination .page-item .page-link{
+    color: var(--color-pink);
+    border-radius: 20px !important;
+    /* border: none !important; */
+    padding: .2rem !important;
+    margin: .2rem !important;
+    background-color: transparent;
+    width: 30px !important;
+    height: 30px !important;
+
+}
+
+
+.pagination .active{
+    background-color: var(--color-pink) !important;
+    border-radius: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-item .page-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none !important;
+}
+.page-item.disabled{
+    background-color: transparent !important;
+    border: none;
+    border-radius: 100% !important;
+
+}
+
+.page-item .page-link:hover{
+    background-color: var(--color-pink) !important;
+    color: white !important;
+    
+}
+
+.page-item.disabled .page-link{
+    background-color: transparent !important;
+    border: none;
+    color: var(--color-darkgrey) !important;
+}
+
+.page-item.active{
+    background-color: var(--color-green-light) !important;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    background-color: var(--color-green-light) !important;
+    color: white !important;
+    border: none;
+    border-radius: 100% !important;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination > .active > a, .pagination > .active > a:focus{
+    background-color: var(--color-pink-dark);
+    border: none;
+}
+
+.pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover{
+    background-color: var(--color-pink);
+    border-color: var(--color-pink);
+    border: none;
+}
+/*  */
+
+#myform{
+    margin: 0 !important;
+}
+
 /* Career details */
 .borderDetail{
     border: 2px solid plum;

@@ -22,7 +22,7 @@
         </div>
     </div>
 </div>
-<form method="POST" action="/careers" class="text-14-sb" name="myform">
+<form method="POST" action="/careers" class="text-14-sb" name="myform" id="myform">
 <div class="container-200vh d-flex p2 bg-pink-light justify-content-center">
     <div class="left p2">
         {{-- <span>Filters</span> --}}
@@ -88,8 +88,8 @@
         </div>
         @endforeach
 
-        <div>
-            {{--{{ $careers->withQueryString()->links() }}--}}
+        <div class="paginationContainer">
+            {{ $careers->withQueryString()->links() }}
         </div>
     </div>
 </div>

@@ -22,7 +22,7 @@
         </div>
     </div>
 </div>
-<form method="POST" action="/majors" class="text-14-sb" name="myform">
+<form method="POST" action="/majors" class="text-14-sb" name="myform" id="myform">
 <div class="container-200vh d-flex p2 bg-pink-light justify-content-center">
     <div class="left p2">
         {{-- <span>Filters</span> --}}
@@ -105,121 +105,12 @@
                 </div>
             </div>
         @endforeach
-        {{-- <div class="cardContainer shadow"data-aos="zoom-in-up">
-            <div class="cardImgContainer">
-                <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
-            </div>
-            <div class="cardTextContainer w-100 w-100">
-                <div class="cardTitle">
-                    <span class="text-14-r text-blue-dark">
-                        BINUS University
-                    </span>
-                    <br>
-                    <span class="text-h4 text-blue-dark">
-                        Pendidikan Dokter Gigi
-                    </span>
-                </div>
-                <div class="cardType">
-                    <a class="type text-12-sb">IPA</a>
-                </div>
-                <div class="cardDesc text-14-r text-darkgrey">
-                    Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ...
-                </div>
-                <div class="cardFooter">
-                    <a href="/major/1" class="text-decoration-none text-white"><button class="btn btn-primary text-12-sb">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></button></a>
-                    <span class="cardTuition text-h4 text-blue-dark">
-                        Rp 100.000.000
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="cardContainer shadow"data-aos="zoom-in-up">
-            <div class="cardImgContainer">
-                <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
-            </div>
-            <div class="cardTextContainer w-100 w-100">
-                <div class="cardTitle">
-                    <span class="text-14-r text-blue-dark">
-                        BINUS University
-                    </span>
-                    <br>
-                    <span class="text-h4 text-blue-dark">
-                        Pendidikan Dokter Gigi
-                    </span>
-                </div>
-                <div class="cardType">
-                    <a class="type text-12-sb">IPA</a>
-                </div>
-                <div class="cardDesc text-14-r text-darkgrey">
-                    Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ...
-                </div>
-                <div class="cardFooter">
-                    <a href="/major/1" class="text-decoration-none text-white"><button class="btn btn-primary text-12-sb">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></button></a>
-                    <span class="cardTuition text-h4 text-blue-dark">
-                        Rp 100.000.000
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="cardContainer shadow"data-aos="zoom-in-up">
-            <div class="cardImgContainer">
-                <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
-            </div>
-            <div class="cardTextContainer w-100 w-100">
-                <div class="cardTitle">
-                    <span class="text-14-r text-blue-dark">
-                        BINUS University
-                    </span>
-                    <br>
-                    <span class="text-h4 text-blue-dark">
-                        Pendidikan Dokter Gigi
-                    </span>
-                </div>
-                <div class="cardType">
-                    <a class="type text-12-sb">IPA</a>
-                </div>
-                <div class="cardDesc text-14-r text-darkgrey">
-                    Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ...
-                </div>
-                <div class="cardFooter">
-                    <a href="/major/1" class="text-decoration-none text-white"><button class="btn btn-primary text-12-sb">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></button></a>
-                    <span class="cardTuition text-h4 text-blue-dark">
-                        Rp 100.000.000
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="cardContainer shadow"data-aos="zoom-in-up">
-            <div class="cardImgContainer">
-                <img src="{{asset('storage/assets/dentist.png')}}" alt="image">
-            </div>
-            <div class="cardTextContainer w-100 w-100">
-                <div class="cardTitle">
-                    <span class="text-14-r text-blue-dark">
-                        BINUS University
-                    </span>
-                    <br>
-                    <span class="text-h4 text-blue-dark">
-                        Pendidikan Dokter Gigi
-                    </span>
-                </div>
-                <div class="cardType">
-                    <a class="type text-12-sb">IPA</a>
-                </div>
-                <div class="cardDesc text-14-r text-darkgrey">
-                    Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and ...
-                </div>
-                <div class="cardFooter">
-                    <a href="/major/1" class="text-decoration-none text-white"><button class="btn btn-primary text-12-sb">Read more <img src="{{asset('storage/assets/icons/arrow.svg')}}" alt="" class="icon filter-white"></button></a>
-                    <span class="cardTuition text-h4 text-blue-dark">
-                        Rp 100.000.000
-                    </span>
-                </div>
-            </div>
-        </div> --}}
+
         <div>
         @if(old('sort', 'asc') != 'best')
-        {{--{{ $majors->withQueryString()->links() }}--}}
+        <div class="paginationContainer">
+            {{ $majors->withQueryString()->links() }}
+        </div>
         @endif
         </div>
     </div>
