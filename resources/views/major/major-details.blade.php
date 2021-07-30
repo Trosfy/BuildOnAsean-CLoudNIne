@@ -41,7 +41,7 @@
                     </span> 
                     <br>
                     <span class="text-14-r text-darkgrey">
-                        {{$details->jobdesc}}
+                        {{$details->description}}
                     </span>
                 </div>
                 <div class="careerJurusan d-flex flex-column p2"data-aos="zoom-in-up">

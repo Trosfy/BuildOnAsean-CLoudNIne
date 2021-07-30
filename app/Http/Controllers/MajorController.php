@@ -104,7 +104,7 @@ class MajorController extends Controller
     }
     public function show($id)
     {
-        $details = DB::table('majors')->join('uni_majors', 'uni_majors.major_id', '=', 'majors.id')->join('universities', 'uni_majors.university_id', '=', 'universities.id')->join('careers', 'careers.major_id', '=', 'majors.id')->select('majors.name AS major_name', 'majors.stream-science AS stream_science','majors.stream-social AS stream_social', 'uni_majors.budget', 'careers.jobtitle as career_name', 'careers.overview', 'careers.id as career_id', 'careers.jobdesc', 'careers.img','majors.trans-name AS trans_name')->where('majors.id', '=', $id)->orderBy('uni_majors.budget')->first(); 
+        $details = DB::table('majors')->join('uni_majors', 'uni_majors.major_id', '=', 'majors.id')->join('universities', 'uni_majors.university_id', '=', 'universities.id')->join('careers', 'careers.major_id', '=', 'majors.id')->select('majors.name AS major_name', 'majors.stream-science AS stream_science','majors.stream-social AS stream_social', 'uni_majors.budget', 'careers.jobtitle as career_name', 'careers.overview', 'careers.id as career_id', 'careers.jobdesc', 'majors.description','careers.img','majors.trans-name AS trans_name')->where('majors.id', '=', $id)->orderBy('uni_majors.budget')->first(); 
         // dd($details); 
 
         $other_career_prospects = DB::table('majors')->join('careers', 'careers.major_id', '=', 'majors.id')->select('careers.id', 'careers.jobtitle', 'careers.overview', 'majors.name', 'careers.img','majors.trans-name AS trans_name')->where('majors.id', '=', $id)->get();

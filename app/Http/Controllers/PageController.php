@@ -132,26 +132,41 @@ class PageController extends Controller
                     $other_unis = ""; 
                     array_push($hasil, $hasil_persamaan_major[0]);
                     for ($i=1; $i < count($hasil_persamaan_major); $i++) { 
-                        if(count($hasil) == 4){
-                            break; 
-                        }
+                        // if(count($hasil) == 4){
+                        //     // break; 
+                        // }
     
                         if($hasil[count($hasil)-1]->name != $hasil_persamaan_major[$i]->name){
                             $other_unis = rtrim($other_unis, ", "); 
                             $hasil[count($hasil)-1]->other_major = $other_unis; 
                             array_push($hasil, $hasil_persamaan_major[$i]);
-                            $other_unis = "";
-                        } else {
-                            $other_unis .= $hasil_persamaan_major[$i]->university_name . ", ";
-                        }
-                    }
+                             $other_unis = "";
+                         } else {
+                             $other_unis .= $hasil_persamaan_major[$i]->university_name . ", ";
+                         }
+                     }
                     
                     $output = array_slice($hasil, 0, 3);
+                    }
+                // $output = array_slice($hasil_persamaan_major, 0, 3);
+
+                // dd($hasil);
+
+                $hasil_gabungan = NULL;
+                if($career_recommendation != NULL){
+                    $hasil_gabungan = array();
+                    foreach($career_recommendation as $career){
+                        for ($i=0; $i < count($hasil) ; $i++) { 
+                            if($career->major_id == $hasil[$i]->id){
+                                array_push($hasil_gabungan, $hasil[$i]); 
+                            }
+                        }
+                    }
                 }
 
-                // dd($output);
+                // dd($hasil_gabungan);
 
-                return view('dashboard', ['career_recommendation' => $career_recommendation, 'major_recommendation' => $output]);
+                return view('dashboard', ['hasil_gabungan' => $hasil_gabungan, 'major_recommendation' => $output]);
             }
         } else 
             return view('landing');
